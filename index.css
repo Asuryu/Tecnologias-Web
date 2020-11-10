@@ -1,3 +1,13 @@
+@font-face{
+    font-family: Nexa Light;
+    src: url("assets/fonts/Nexa\ Light.otf");
+}
+
+body{
+    transition: 0.3s;
+    font-family: Nexa Light;
+}
+
 .navbar{
     display: flex;
     position: absolute;
@@ -9,12 +19,15 @@
 }
 
 .navbar a{
-    background-color: #ff7b00;
+    transition: 0.3s;
     cursor: pointer;
     color: white;
     width: 100px;
     height: 40px;
     text-align: center;
     line-height: 43px;
-    margin-right: 5px;
 }
+
+.navbar a#1:hover{ background-color: #42c2f5; }
+.navbar a#2:hover{ background-color: #810aff; }
+.navbar a#3:hover{ background-color: #ff4d35; }
