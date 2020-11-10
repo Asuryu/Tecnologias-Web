@@ -10,34 +10,51 @@
 body{
     transition: 0.3s;
     font-family: Nexa Light;
+    height: 2000px;
 }
 
 .navbar{
     display: flex;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 100vw;
     height: 40px;
     background-color: #333333;
+    align-items: center;
 }
 
 .navbar a{
     transition: 0.3s;
     cursor: pointer;
     color: white;
-    width: 100px;
+    width: 120px;
+    padding-right: 10px;
+    padding-left: 10px;
     height: 40px;
     text-align: center;
     line-height: 43px;
+    text-transform: uppercase;
+    font-size: 13px;
+    align-items: center;
 }
 
 .navbar a:last-child{
+    height: 40px;
+    width: 40px;
     transition: 0.3s;
     position: absolute;
-    right: -10px;
+    right: 0px;
     font-size: 30px;
     top: 5px;
+}
+.navbar a:first-child{
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    transition: 0.3s;
+    left: 0px;
+    font-size: 30px;
 }
 .navbar a:last-child:hover i{
     transition: 0.3s;
@@ -47,6 +64,7 @@ body{
 .navbar a#1:hover{ background-color: #42c2f5; }
 .navbar a#2:hover{ background-color: #810aff; }
 .navbar a#3:hover{ background-color: #ff4d35; }
+.navbar a#4:hover{ background-color: #78ff56; }
 
 #title{
     position: absolute;
@@ -55,5 +73,14 @@ body{
     transform: translate(-50%, 0%);
     font-size: 120px;
     font-family: Modelica;
+    color: #333333;
+}
+#subtitle{
+    position: absolute;
+    top: 205px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    font-size: 23px;
+    font-family: Nexa Light;
     color: #333333;
 }
