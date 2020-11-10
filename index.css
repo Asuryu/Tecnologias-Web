@@ -2,6 +2,10 @@
     font-family: Nexa Light;
     src: url("assets/fonts/Nexa\ Light.otf");
 }
+@font-face{
+    font-family: Modelica;
+    src: url("assets/fonts/Redwing-Light.otf");
+}
 
 body{
     transition: 0.3s;
@@ -28,6 +32,28 @@ body{
     line-height: 43px;
 }
 
+.navbar a:last-child{
+    transition: 0.3s;
+    position: absolute;
+    right: -10px;
+    font-size: 30px;
+    top: 5px;
+}
+.navbar a:last-child:hover i{
+    transition: 0.3s;
+    color: #28ff94;
+}
+
 .navbar a#1:hover{ background-color: #42c2f5; }
 .navbar a#2:hover{ background-color: #810aff; }
 .navbar a#3:hover{ background-color: #ff4d35; }
+
+#title{
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    font-size: 120px;
+    font-family: Modelica;
+    color: #333333;
+}
