@@ -16,7 +16,7 @@ $(document).ready(function(){
     })
     $(".navbar a#4").mouseover(function(){
         $("body").css("background-color", "#78ff56")
-        $(this).css("background-color", "#78ff56")
+        $(this).css("background-color", "#78ff56")asdasd
     })
     $(".navbar a").mouseleave(function(){
         $("body").css("background-color", "white")
