@@ -1,8 +1,12 @@
 @font-face{
     font-family: Nexa Light;
-    src: url("../assets/fonts/Nexa\ Light.otf");
+    src: url("../assets/fonts/Nexa Light.otf")
+}
+@font-face{
+    font-family: NexaBold;
+    src: url("../assets/fonts/Nexa Bold.otf")
 }
 @font-face{
     font-family: Modelica;
-    src: url("../assets/fonts/Redwing-Light.otf");
+    src: url("/assets/fonts/Redwing-Light.otf");
 }

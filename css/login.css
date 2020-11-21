@@ -9,6 +9,7 @@
 body{
     transition: 0.3s;
     font-family: Nexa Light;
+    overflow-x: hidden;
 }
 
 .background img{
@@ -24,10 +25,11 @@ body{
     height: 100vh;
     width: 550px;
     transform: scaleX(1);
+    filter: drop-shadow(0 3px 3px rgb(0, 0, 0));
 }
 
   
-.credentialsBox{
+.loginBox, .registerBox{
     z-index: 3;
     display: block;
     position: absolute;
@@ -39,8 +41,11 @@ body{
     border: none;
     border-radius: 8px;
 }
+.registerBox{
+    left: 50%;
+}
 
-.credentialsBox input{
+.loginBox input, .registerBox input{
     transition: font-size 0.3s;
     position: relative;
     left: 50%;
@@ -58,7 +63,7 @@ body{
     font-size: 15px;
     font-family: Nexa Light;
 }
-.credentialsBox button{
+.loginBox button, .registerBox button{
     position: relative;
     left: 50%;
     top: 50%;
@@ -76,7 +81,7 @@ body{
     font-size: 18px;
     font-family: Nexa Light;
 }
-.credentialsBox button:hover{
+.loginBox button:hover, .registerBox button:hover{
     transition: 0.3s;
     background-color: #af2900;
 }
@@ -105,19 +110,30 @@ body{
     left: 50%;
     transform: translate(-50%, 0%);
     color: white;
-    font-family: Nexa Bold;
+    font-family: NexaBold;
     font-size: 65px;
+    text-align: center;
 }
 .subtitle{
     position: absolute;
     left: 50%;
     top: 80px;
-    width: 230px;
+    width: 260px;
     transform: translate(-50%, 0%);
     color: white;
     font-family: Nexa Light;
     font-size: 17px;
     text-align: center;
+}
+
+.close{
+    z-index: 3;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
 }
 
 .logo{
@@ -136,4 +152,33 @@ body{
     width: 100vw;
     height: 100vh;
     background-color: #111111d5;
+}
+
+.anim{
+    animation: anim 1s linear;
+}
+
+@keyframes anim{
+    0%{
+        width: initial;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .loginBox, .registerBox{
+        left: 50%;
+    }
+    .logo{
+        z-index: 3;
+        left: 50%;
+        transform: translate(-50%, 0%);
+    }
+    .subtitle{
+        width: 300px;
+        height: 30px;
+        padding: 10px;
+    }
 }

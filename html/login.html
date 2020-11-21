@@ -16,14 +16,24 @@
             <img class="flair" draggable="false" src="../assets/flair.png">
             <img draggable="false" src="../assets/centro-de-saude.jpg">
         </div>
+
+        <a class="close"><i class="fas fa-times"></i></a>
         
-        <div class="credentialsBox">
+        <div class="loginBox">
             <h class="title">Login</h>
             <p class="subtitle">Faça login para aceder à sua área pessoal</p>
             <input placeholder="Username" id="usr">
             <input placeholder="Password" type="password" id="pwd">
             <button id="login">Entrar</button>
-            <p class="register-link">ou pode <a>registar-se</a></p>
+            <p class="register-link">ou pode <a id="register">registar-se</a></p>
+        </div>
+        <div class="registerBox">
+            <h class="title" style="width: 300px;">Sign Up</h>
+            <p class="subtitle">Registe-se para poder usufruir de todas as funcionalidades da USF!</p>
+            <input placeholder="Username" id="usr">
+            <input placeholder="Password" type="password" id="pwd">
+            <button id="register">Registar</button>
+            <p class="register-link">ou pode fazer <a id="login">login</a></p>
         </div>
     </body>
 </html>
