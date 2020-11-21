@@ -154,6 +154,10 @@ body{
     background-color: #111111d5;
 }
 
+
+.flip{
+    transform: rotate(180deg);
+}
 .anim{
     animation: anim 1s linear;
 }
@@ -164,6 +168,14 @@ body{
     }
     100%{
         width: 100%;
+    }
+}
+@keyframes anim2{
+    0%{
+        width: initial;
+    }
+    100%{
+        width: 0%;
     }
 }
 

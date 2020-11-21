@@ -4,6 +4,7 @@ $(document).ready(function(){
 
     $(".register-link a#register").click(function(){
         $(".loginBox").fadeOut();
+        $(".close i").addClass("flip")
         $(".flair").css({
             "transition": "0.7s",
             "width": "calc(100% + 1050px)"
@@ -25,6 +26,10 @@ $(document).ready(function(){
 
     $(".close").click(function(){
         $(".registerBox, .loginBox, .close").fadeOut()
+        $(".flair").css({
+            "transition": "0.7s",
+            "width": "0px"
+        });
     })
 
 })
