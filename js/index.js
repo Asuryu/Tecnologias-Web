@@ -1,6 +1,10 @@
 $(document).ready(function(){
 
-    $(".registerBox").hide()
+    $(".registerBox, .loginBox, .close").hide()
+    $(".flair").css({
+        "transition": "0.7s",
+        "width": "0px"
+    });
 
     $(".register-link a#register").click(function(){
         $(".loginBox").fadeOut();
@@ -30,6 +34,15 @@ $(document).ready(function(){
             "transition": "0.7s",
             "width": "0px"
         });
+        $(".log").fadeIn()
+    })
+    $(".log").click(function(){
+        $(".log").fadeOut()
+        $(".flair").css({
+            "transition": "0.7s",
+            "width": "550px"
+        });
+        $(".loginBox, .close").fadeIn()
     })
 
 })

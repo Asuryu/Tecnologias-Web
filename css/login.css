@@ -126,7 +126,7 @@ body{
     text-align: center;
 }
 
-.close{
+.close, .log{
     z-index: 3;
     position: absolute;
     right: 25px;
