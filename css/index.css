@@ -30,10 +30,11 @@ body{
 
   
 .loginBox, .registerBox{
+    display: block;
     z-index: 3;
     display: block;
     position: absolute;
-    left: 85%;
+    right: -70px;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 300px;
@@ -108,6 +109,7 @@ body{
 .title{
     position: absolute;
     left: 50%;
+    top: -10px;
     transform: translate(-50%, 0%);
     color: white;
     font-family: NexaBold;
@@ -117,8 +119,8 @@ body{
 .subtitle{
     position: absolute;
     left: 50%;
-    top: 80px;
-    width: 260px;
+    top: 75px;
+    width: 300px;
     transform: translate(-50%, 0%);
     color: white;
     font-family: Nexa Light;
@@ -191,6 +193,6 @@ body{
     .subtitle{
         width: 300px;
         height: 30px;
-        padding: 10px;
+        top: 80px;
     }
 }
