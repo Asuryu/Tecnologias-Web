@@ -13,6 +13,7 @@ body{
     overflow-x: hidden;
     height: 2000px;
     background-color: #292929;
+    display: none;
 }
 
 .background img{
@@ -21,6 +22,8 @@ body{
     transform: scaleX(-1);
 }
 .background .flair{
+    transition: 0.7s;
+    width: 0px;
     z-index: 108;
     position: absolute;
     top: 0;
@@ -213,7 +216,7 @@ body{
     height: 100vh;
 }
 .hey{
-    position: absolute;
+    position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -233,6 +236,7 @@ body{
     transform: translate(-50%, 0%);
     padding-top: 10px;
     padding-bottom: 10px;
+    animation: swipeRight 1s;
 }
 .menu-mobile a:hover{
     transition: 0.3s;
@@ -317,15 +321,30 @@ body{
         position: absolute;
         right: 25px;
     }
+    .menu-mobile{
+        visibility: visible;
+    }
 }
 @media screen and (max-width: 999px) and (min-width: 601px){
     .men{
         transition: color 0.3s;
         left: 125px;
     }
+    .menu-mobile{
+        visibility: visible;
+    }
 }
 
 .navbar, .logo, .close, .log, .men{
     user-select: none;
     position: fixed;
+}
+
+@keyframes swipeRight{
+    0%{
+        left: 0;
+    }
+    100%{
+        left: 50%;
+    }
 }

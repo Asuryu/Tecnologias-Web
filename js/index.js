@@ -1,10 +1,13 @@
 $(document).ready(function(){
 
-    $(".registerBox, .loginBox, .close").hide()
+    $("body").css({"display": "block"})
+
     $(".flair").css({
-        "transition": "0.7s",
+        "transition": "0.3s",
         "width": "0px"
-    });
+    })
+
+    $(".flair, .registerBox, .loginBox, .close, .menu-mobile").hide()
 
     $(window).scroll(function(){
         var scroll = $(window).scrollTop();
@@ -14,6 +17,17 @@ $(document).ready(function(){
         } else {
             $(".darkner").css({"background-color": "#111111d5"})
             $(".navbg").css({"background-color": "transparent"})
+        }
+    })
+
+    $(".men").click(function(){
+        if($(".men").attr("id") == "off"){
+            $(".menu-mobile").fadeIn()
+            $(".men").attr("id", "on")
+        }
+        else{
+            $(".menu-mobile").fadeOut()
+            $(".men").attr("id", "off")
         }
     })
 
@@ -42,6 +56,8 @@ $(document).ready(function(){
     })
 
     $(".close").click(function(){
+        $(".flair").fadeOut()
+        $(".men").fadeIn()
         $(".flair, .loginBox, .registerBox").css({"position": "fixed"})
         $(".registerBox, .loginBox, .close").fadeOut()
         $(".flair").css({
@@ -51,6 +67,8 @@ $(document).ready(function(){
         $(".log").fadeIn()
     })
     $(".log").click(function(){
+        $(".flair").fadeIn()
+        $(".men").fadeOut()
         $(".flair, .loginBox, .registerBox").css({"position": "fixed"})
         $(".log").fadeOut()
         $(".flair").css({
