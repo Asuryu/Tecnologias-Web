@@ -10,6 +10,15 @@
 
     <body>
         <img draggable="false" class="logo" src="../assets/logo.png">
+        <div class="navbg"></div>
+
+        <div class="navbar">
+            <a>Quem Somos</a>
+            <a>O que Fazemos</a>
+            <a>Indicadores</a>
+            <a>Recursos</a>
+            <a>Mais Apoio</a>
+        </div>
 
         <div class="background">
             <div class="darkner"></div>
@@ -17,13 +26,16 @@
             <img draggable="false" src="../assets/centro-de-saude.jpg">
         </div>
 
-        <a class="close"><i class="fas fa-times"></i></a>
-        <a class="log"><i class="far fa-user"></i></a>
+        <div class="btns">
+            <a class="close"><i class="fas fa-times"></i></a>
+            <a class="log"><i class="far fa-user"></i></a>
+            <a class="men"><i class="fas fa-bars"></i></a>
+        </div>
         
         <div class="loginBox">
             <h class="title">Login</h>
             <p class="subtitle">Faça login para aceder à sua área pessoal</p>
-            <input placeholder="Username" id="usr">
+            <input placeholder="Email" type="email" id="email">
             <input placeholder="Password" type="password" id="pwd">
             <button id="login">Entrar</button>
             <p class="register-link">ou pode <a id="register">registar-se</a></p>
@@ -31,8 +43,9 @@
         <div class="registerBox">
             <h class="title" style="width: 300px;">Sign Up</h>
             <p class="subtitle">Registe-se para poder usufruir de todas as funcionalidades da USF</p>
-            <input placeholder="Username" id="usr">
+            <input placeholder="Email" type="email" id="email">
             <input placeholder="Password" type="password" id="pwd">
+            <input placeholder="Confirm Password" type="password" id="pwd">
             <button id="register">Registar</button>
             <p class="register-link">ou pode fazer <a id="login">login</a></p>
         </div>

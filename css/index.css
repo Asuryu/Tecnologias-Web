@@ -10,6 +10,8 @@ body{
     transition: 0.3s;
     font-family: Nexa Light;
     overflow-x: hidden;
+    height: 2000px;
+    background-color: #292929;
 }
 
 .background img{
@@ -18,7 +20,7 @@ body{
     transform: scaleX(-1);
 }
 .background .flair{
-    z-index: 2;
+    z-index: 108;
     position: absolute;
     top: 0;
     right: 0;
@@ -31,7 +33,7 @@ body{
   
 .loginBox, .registerBox{
     display: block;
-    z-index: 3;
+    z-index: 109;
     display: block;
     position: absolute;
     right: -70px;
@@ -88,9 +90,9 @@ body{
 }
 
 .register-link{
-    position: absolute;
+    position: relative;
     left: 50%;
-    top: 315px;
+    top: 58px;
     transform: translate(-50%, 0%);
     font-family: Nexa Light;
     font-size: 16px;
@@ -129,24 +131,51 @@ body{
 }
 
 .close, .log{
-    z-index: 3;
+    z-index: 111;
+    transition: color 0.3s;
     position: absolute;
     right: 25px;
-    top: 25px;
+    top: 23px;
     font-size: 35px;
     color: white;
     cursor: pointer;
 }
+.men{
+    z-index: 111;
+    transition: 0.3s;
+    visibility: hidden;
+    transition: color 0.3s;
+    position: absolute;
+    left: 25px;
+    top: 23px;
+    width: 35px;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+}
+.men:hover{
+    transition: color 0.3s;
+    color: rgb(139, 51, 255);
+}
+.close:hover{
+    transition: color 0.3s;
+    color: rgb(255, 51, 51);
+}
+.log:hover{
+    transition: color 0.3s;
+    color: rgb(255, 133, 51);
+}
 
 .logo{
-    z-index: 2;
+    z-index: 107;
     position: absolute;
-    top: 0px;
+    top: -3px;
     left: 0px;
     height: 90px;
 }
 
 .darkner{
+    transition: background-color 0.3s;
     z-index: 1;
     position: absolute;
     top: 0;
@@ -156,12 +185,46 @@ body{
     background-color: #111111d5;
 }
 
-
 .flip{
     transform: rotate(180deg);
 }
 .anim{
     animation: anim 1s linear;
+}
+
+.navbg{
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 80px;
+}
+
+.navbar{
+    z-index: 106;
+    transition: opacity 0.3s;
+    transition: background-color 0.3s;
+    opacity: 1.0;
+    z-index: 100;
+    position: absolute;
+    left: 125px;
+    top: 30px;
+    width: 100vw;
+
+}
+.navbar a{
+    transition: 0.3s;
+    padding: 16px;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: white;
+    font-family: NexaBold;
+    cursor: pointer;
+}
+.navbar a:hover{
+    transition: 0.3s;
+    color: rgb(255, 145, 0);
 }
 
 @keyframes anim{
@@ -186,7 +249,7 @@ body{
         left: 50%;
     }
     .logo{
-        z-index: 3;
+        z-index: 107;
         left: 50%;
         transform: translate(-50%, 0%);
     }
@@ -195,4 +258,33 @@ body{
         height: 30px;
         top: 80px;
     }
+    .men{
+        transition: 0.3s;
+        visibility: visible;
+        position: absolute;
+        left: 25px;
+    }
+}
+@media screen and (max-width: 1000px){
+    .navbar{
+        transition: opacity 0.3s;
+        opacity: 0.0;
+    }
+    .men{
+        transition: 0.3s;
+        visibility: visible;
+        position: absolute;
+        right: 25px;
+    }
+}
+@media screen and (max-width: 999px) and (min-width: 601px){
+    .men{
+        transition: color 0.3s;
+        left: 125px;
+    }
+}
+
+.navbar, .logo, .close, .log, .men{
+    user-select: none;
+    position: fixed;
 }
