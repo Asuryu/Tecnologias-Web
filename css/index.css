@@ -4,6 +4,7 @@
     padding: 0;
     margin: 0;
     outline: none;
+    -webkit-tap-highlight-color:rgba(255, 255, 255, 0); 
 }
 
 body{
@@ -12,6 +13,7 @@ body{
     overflow-x: hidden;
     height: 2000px;
     background-color: #292929;
+    -webkit-tap-highlight-color:rgba(255, 255, 255, 0); 
 }
 
 .background img{
@@ -285,6 +287,7 @@ body{
 }
 
 .navbar, .logo, .close, .log, .men{
+    -webkit-tap-highlight-color:rgba(255, 255, 255, 0); 
     user-select: none;
     position: fixed;
 }
