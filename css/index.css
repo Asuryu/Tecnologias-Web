@@ -13,7 +13,6 @@ body{
     overflow-x: hidden;
     height: 2000px;
     background-color: #292929;
-    -webkit-tap-highlight-color:rgba(255, 255, 255, 0); 
 }
 
 .background img{
@@ -203,6 +202,43 @@ body{
     height: 80px;
 }
 
+.menu-mobile{
+    z-index: 106;
+    visibility: hidden;
+    background-color: #292929;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+.hey{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+}
+.menu-mobile a{
+    display: block;
+    position: relative;
+    transition: 0.3s;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: white;
+    font-family: NexaBold;
+    cursor: pointer;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.menu-mobile a:hover{
+    transition: 0.3s;
+    color: rgb(255, 145, 0);
+}
+
 .navbar{
     z-index: 106;
     transition: opacity 0.3s;
@@ -266,6 +302,9 @@ body{
         position: absolute;
         left: 25px;
     }
+    .menu-mobile{
+        visibility: visible;
+    }
 }
 @media screen and (max-width: 1000px){
     .navbar{
@@ -287,7 +326,6 @@ body{
 }
 
 .navbar, .logo, .close, .log, .men{
-    -webkit-tap-highlight-color:rgba(255, 255, 255, 0); 
     user-select: none;
     position: fixed;
 }
