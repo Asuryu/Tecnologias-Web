@@ -79,3 +79,30 @@ $(document).ready(function(){
     })
 
 })
+
+function checkCredentials(){
+    var emailInput = document.getElementById("email").value;
+    var passwordInput = document.getElementById("pwd").value;
+
+    if(emailInput == "" && passwordInput == "") return true
+    else if(emailInput == "") alert("Por favor insira o seu email")
+    else if(passwordInput == "") alert("Por favor insira a palavra-passe")
+    
+    if(emailInput != "" && passwordInput != ""){
+        if(emailInput == "tweb@isec.pt" && passwordInput == "tweb"){
+            alert("Correct!")
+        } else {
+            alert("Incorrect")
+        }
+    }
+
+}   
+
+function registerUser(){
+    var emailInputR = document.getElementById("email_reg");
+    var passwordInputR = document.getElementById("pwd_reg");
+    var password2InputR = document.getElementById("pwd2_reg");
+
+
+
+}

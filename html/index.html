@@ -9,7 +9,7 @@
     </head>
 
     <body>
-        <a href="index.html"><img draggable="false" class="logo" src="../assets/logo.png"></a>
+        <a style="cursor: pointer;" onclick="$(window).scrollTop(0);"><img draggable="false" class="logo" src="../assets/logo.png"></a>
         <div class="navbg"></div>
 
         <div class="menu-mobile">
@@ -45,18 +45,18 @@
         <div class="loginBox">
             <h class="title">Login</h>
             <p class="subtitle">Faça login para aceder à sua área pessoal</p>
-            <input placeholder="Email" type="email" id="email">
-            <input placeholder="Password" type="password" id="pwd">
-            <button id="login">Entrar</button>
+            <input placeholder="Email" type="email" id="email" required>
+            <input placeholder="Password" type="password" id="pwd" required>
+            <button id="login" onclick="checkCredentials();">Entrar</button>
             <p class="register-link">ou pode <a id="register">registar-se</a></p>
         </div>
         <div class="registerBox">
             <h class="title" style="width: 300px;">Sign Up</h>
             <p class="subtitle">Registe-se para poder usufruir de todas as funcionalidades da USF</p>
-            <input placeholder="Email" type="email" id="email">
-            <input placeholder="Password" type="password" id="pwd">
-            <input placeholder="Confirm Password" type="password" id="pwd">
-            <button id="register">Registar</button>
+            <input placeholder="Email" type="email" id="email_reg" required>
+            <input placeholder="Password" type="password" id="pwd_reg" required>
+            <input placeholder="Confirm Password" type="password" id="pwd2_reg" required>
+            <button id="register" onclick="registerUser();">Registar</button>
             <p class="register-link">ou pode fazer <a id="login">login</a></p>
         </div>
     </body>
