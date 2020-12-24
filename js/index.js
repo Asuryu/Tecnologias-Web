@@ -1,7 +1,8 @@
 $(document).ready(function(){
 
+    emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
     $("body").css({"display": "block"})
-
+    $(".notification").hide()
     $(".flair").css({
         "transition": "0.3s",
         "width": "0px"
@@ -84,25 +85,49 @@ function checkCredentials(){
     var emailInput = document.getElementById("email").value;
     var passwordInput = document.getElementById("pwd").value;
 
-    if(emailInput == "" && passwordInput == "") return true
-    else if(emailInput == "") alert("Por favor insira o seu email")
-    else if(passwordInput == "") alert("Por favor insira a palavra-passe")
+    if(emailInput == "" && passwordInput == ""){
+        $(".notification#log_in").fadeOut()
+    }
+    else if(emailInput == ""){
+        showNotification("#log_in", "Por favor introduza um endereço de email")
+    }
+    else if(passwordInput == ""){
+        showNotification("#log_in", "Por favor introduza a palavra-passe")
+    } 
     
     if(emailInput != "" && passwordInput != ""){
         if(emailInput == "tweb@isec.pt" && passwordInput == "tweb"){
             alert("Correct!")
         } else {
-            alert("Incorrect")
+            showNotification("#log_in", "As credenciais introduzidas estão incorretas")
         }
     }
 
 }   
 
 function registerUser(){
-    var emailInputR = document.getElementById("email_reg");
-    var passwordInputR = document.getElementById("pwd_reg");
-    var password2InputR = document.getElementById("pwd2_reg");
+    var emailInputR = document.getElementById("email_reg").value;
+    var passwordInputR = document.getElementById("pwd_reg").value;
 
+    if(emailInputR == "" && passwordInputR == ""){
+        $(".notification#sign_up").fadeOut()
+    }
+    else if(emailInputR == ""){
+        showNotification("#sign_up", "Por favor introduza um endereço de email")
+    }
+    else if(emailInputR != "" && !emailRegex.test(emailInputR)){
+        showNotification("#sign_up", "O endereço de email introduzido é inválido")
+    }
+    else if(passwordInputR == ""){
+        showNotification("#sign_up", "Por favor introduza uma palavra-passe")
+    } 
 
+}
 
+function showNotification(selector, message){
+    $(selector).fadeIn()
+    $(selector).html(message)
+    setTimeout(function(){
+        $(selector).fadeOut()
+    }, 2500)
 }

@@ -14,6 +14,7 @@ body{
     height: 2000px;
     background-color: #292929;
     display: none;
+    
 }
 
 .background img{
@@ -267,6 +268,33 @@ body{
 .navbar a:hover{
     transition: 0.3s;
     color: rgb(255, 145, 0);
+}
+
+.notification::before{
+    content: "Erro: ";
+    font-family: NexaBold;
+}
+
+.notification{
+    z-index: 112;
+    position: absolute;
+    width: 250px;
+    max-width: 250px;
+    height: 37px;
+    border-radius: 10px;
+    background-color: rgba(255, 0, 0, 0.301);
+    color: white;
+    font-family: Nexa Light;
+    font-size: 15px;
+    border: solid 2px red;
+    top: -80px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
 @keyframes anim{
