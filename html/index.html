@@ -1,15 +1,32 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt">
     <head>
         <title>USF - Vila de Cucujães</title>
+
+        <meta charset="UTF-8">
+        <meta name="description" content="USF Aliança">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="author" content="Asuryu">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#317EFB"/>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="stylesheet" preload href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
         <link rel="stylesheet" preload href="../css/index.css">
         <script src="../js/index.js"></script>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">                
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="manifest" href="../manifest.json">             
     </head>
 
     <body>
-        <a style="cursor: pointer;" onclick="$(window).scrollTop(0);"><img draggable="false" class="logo" src="../assets/logo.png"></a>
+
+        <script>
+            if("serviceWorker" in navigator){
+                navigator.serviceWorker.register("../service-worker.js")
+            }
+        </script>
+
+        <a style="cursor: pointer;" onclick="$(window).scrollTop(0);"><img alt="USF Aliança (Logo)" draggable="false" class="logo" src="../assets/logo.png"></a>
         <div class="navbg"></div>
 
         <div class="menu-mobile">
@@ -32,8 +49,8 @@
 
         <div class="background">
             <div class="darkner"></div>
-            <img class="flair" draggable="false" src="../assets/flair.png">
-            <img draggable="false" src="../assets/centro-de-saude.jpg">
+            <img alt="Flair" class="flair" draggable="false" src="../assets/flair.png">
+            <img alt="Centro de Saúde" draggable="false" src="../assets/centro-de-saude.jpg">
         </div>
 
         <div class="btns">
