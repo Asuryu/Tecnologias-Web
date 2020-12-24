@@ -160,7 +160,7 @@ body{
 }
 .men:hover{
     transition: color 0.3s;
-    color: rgb(139, 51, 255);
+    color: #8e44ad;
 }
 .close:hover{
     transition: color 0.3s;
@@ -247,8 +247,8 @@ body{
 .navbar{
     z-index: 106;
     transition: opacity 0.3s;
-    transition: background-color 0.3s;
     opacity: 1.0;
+    transition: background-color 0.3s;
     z-index: 100;
     position: absolute;
     left: 125px;
@@ -258,7 +258,7 @@ body{
 }
 .navbar a{
     transition: 0.3s;
-    padding: 16px;
+    padding: 24px;
     font-size: 20px;
     text-transform: uppercase;
     color: white;
@@ -270,12 +270,9 @@ body{
     color: rgb(255, 145, 0);
 }
 
-.notification::before{
-    content: "Erro: ";
-    font-family: NexaBold;
-}
-
 .notification{
+    display: flex;
+    align-items: center;
     z-index: 112;
     position: absolute;
     width: 250px;
@@ -295,6 +292,7 @@ body{
     padding-right: 10px;
     padding-top: 3px;
     padding-bottom: 3px;
+    margin: 0 auto;
 }
 
 @keyframes anim{
@@ -338,7 +336,12 @@ body{
         visibility: visible;
     }
 }
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1100px){
+    .logo{
+        z-index: 107;
+        left: 50%;
+        transform: translate(-50%, 0%);
+    }
     .navbar{
         transition: opacity 0.3s;
         opacity: 0.0;
@@ -348,15 +351,6 @@ body{
         visibility: visible;
         position: absolute;
         right: 25px;
-    }
-    .menu-mobile{
-        visibility: visible;
-    }
-}
-@media screen and (max-width: 999px) and (min-width: 601px){
-    .men{
-        transition: color 0.3s;
-        left: 125px;
     }
     .menu-mobile{
         visibility: visible;

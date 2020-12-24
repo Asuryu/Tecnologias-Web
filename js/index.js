@@ -23,10 +23,12 @@ $(document).ready(function(){
 
     $(".men").click(function(){
         if($(".men").attr("id") == "off"){
+            $(".men").html('<i class="fas fa-times"></i>')
             $(".menu-mobile").fadeIn()
             $(".men").attr("id", "on")
         }
         else{
+            $(".men").html('<i class="fas fa-bars"></i>')
             $(".menu-mobile").fadeOut()
             $(".men").attr("id", "off")
         }
@@ -91,11 +93,13 @@ function checkCredentials(){
     else if(emailInput == ""){
         showNotification("#log_in", "Por favor introduza um endereço de email")
     }
+    else if(emailInput != "" && !emailRegex.test(emailInput)){
+        showNotification("#log_in", "O endereço de email introduzido é inválido")
+    }
     else if(passwordInput == ""){
         showNotification("#log_in", "Por favor introduza a palavra-passe")
     } 
-    
-    if(emailInput != "" && passwordInput != ""){
+    else if(emailInput != "" && passwordInput != ""){
         if(emailInput == "tweb@isec.pt" && passwordInput == "tweb"){
             alert("Correct!")
         } else {
@@ -126,7 +130,7 @@ function registerUser(){
 
 function showNotification(selector, message){
     $(selector).fadeIn()
-    $(selector).html(message)
+    $(selector).html("<center>" + message + "</center>")
     setTimeout(function(){
         $(selector).fadeOut()
     }, 2500)
