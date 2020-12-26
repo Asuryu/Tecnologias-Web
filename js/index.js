@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+    emailRegex = /\S+@\S+\.\S+/
     $("body").css({"display": "block"})
     $(".notification").hide()
     $(".flair").css({
