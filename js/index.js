@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     emailRegex = /\S+@\S+\.\S+/
     $("body").css({"display": "block"})
-    $(".notification").hide()
+    $(".notification, .wrap").hide()
     $(".flair").css({
         "transition": "0.3s",
         "width": "0px"
@@ -15,10 +15,79 @@ $(document).ready(function(){
         if (scroll > 0){
             $(".darkner").css({"background-color": "#292929"})
             $(".navbg").css({"background-color": "#212121"})
+
+            $(".wrap").fadeIn()
+            $(".darkner").css({"height": "0px"})
+            $(".background img").css({"height": "0px"})
         } else {
             $(".darkner").css({"background-color": "#111111d5"})
             $(".navbg").css({"background-color": "transparent"})
+
+            $(".wrap").fadeOut()
+            $(".darkner").css({"height": "100vh"})
+            $(".background img").css({"height": "100vh"})
         }
+    })
+
+    $("#0, #5").click(function(){
+        $(".wrap").fadeIn()
+        $("#quem-somos")[0].scrollIntoView({
+            behavior: 'auto',
+            block: 'center',
+            inline: 'center'
+        });
+        $("#quem-somos").css({"opacity": "0.5"})
+        setTimeout(function(){
+            $("#quem-somos").css({"opacity": "1.0"})
+        }, 300)
+    })
+    $("#1, #6").click(function(){
+        $(".wrap").fadeIn()
+        $("#o-que-fazemos")[0].scrollIntoView({
+            behavior: 'auto',
+            block: 'center',
+            inline: 'center'
+        });
+        $("#o-que-fazemos").css({"opacity": "0.5"})
+        setTimeout(function(){
+            $("#o-que-fazemos").css({"opacity": "1.0"})
+        }, 300)
+    })
+    $("#2, #7").click(function(){
+        $(".wrap").fadeIn()
+        $("#indicadores")[0].scrollIntoView({
+            behavior: 'auto',
+            block: 'center',
+            inline: 'center'
+        });
+        $("#indicadores").css({"opacity": "0.5"})
+        setTimeout(function(){
+            $("#indicadores").css({"opacity": "1.0"})
+        }, 300)
+    })
+    $("#3, #8").click(function(){
+        $(".wrap").fadeIn()
+        $("#recursos")[0].scrollIntoView({
+            behavior: 'auto',
+            block: 'center',
+            inline: 'center'
+        });
+        $("#recursos").css({"opacity": "0.5"})
+        setTimeout(function(){
+            $("#recursos").css({"opacity": "1.0"})
+        }, 300)
+    })
+    $("#4, #9").click(function(){
+        $(".wrap").fadeIn()
+        $("#mais-apoio")[0].scrollIntoView({
+            behavior: 'auto',
+            block: 'center',
+            inline: 'center'
+        });
+        $("#mais-apoio").css({"opacity": "0.5"})
+        setTimeout(function(){
+            $("#mais-apoio").css({"opacity": "1.0"})
+        }, 300)
     })
 
     $(".men").click(function(){
@@ -134,4 +203,11 @@ function showNotification(selector, message){
     setTimeout(function(){
         $(selector).fadeOut()
     }, 2500)
+}
+
+function closeMobileNav(){
+    $(".men").html('<i class="fas fa-bars"></i>')
+    $(".menu-mobile").fadeOut()
+    $(".men").attr("id", "off")
+    return true;
 }

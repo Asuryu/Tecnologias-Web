@@ -4,17 +4,21 @@
     padding: 0;
     margin: 0;
     outline: none;
-    -webkit-tap-highlight-color:rgba(255, 255, 255, 0); 
+    -webkit-tap-highlight-color:rgba(255, 255, 255, 0);
 }
 
 body{
     transition: 0.3s;
     font-family: Nexa Light;
     overflow-x: hidden;
-    height: 2000px;
+    height: 3000px;
     background-color: #292929;
     display: none;
     
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 .background img{
@@ -210,7 +214,7 @@ body{
     z-index: 106;
     visibility: hidden;
     background-color: #292929;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
@@ -238,6 +242,7 @@ body{
     padding-top: 10px;
     padding-bottom: 10px;
     animation: swipeRight 1s;
+    text-decoration: none;
 }
 .menu-mobile a:hover{
     transition: 0.3s;
@@ -254,7 +259,6 @@ body{
     left: 125px;
     top: 30px;
     width: 100vw;
-
 }
 .navbar a{
     transition: 0.3s;
@@ -264,6 +268,7 @@ body{
     color: white;
     font-family: NexaBold;
     cursor: pointer;
+    text-decoration: none;
 }
 .navbar a:hover{
     transition: 0.3s;
@@ -293,6 +298,68 @@ body{
     padding-top: 3px;
     padding-bottom: 3px;
     margin: 0 auto;
+}
+
+
+.wrap{
+    z-index: 2;
+    top: 300px;
+    display: grid;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    text-align: center;
+    width: 100vw;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.quem-somos, .o-que-fazemos, .indicadores, .recursos, .mais-apoio, .adicional{
+    display: inline-block;
+    transition: opacity 0.3s;
+    position: relative;
+    height: auto;
+    color: white;
+    margin: 5px;
+    border-radius: 10px;
+    min-height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,.05), 2px 2px 5px rgba(0,0,0,.1);
+}
+.quem-somos h, .o-que-fazemos h, .indicadores h, .recursos h, .mais-apoio h, .adicional h{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    font-family: NexaBold;
+    font-size: 26px;
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+}
+.quem-somos p, .o-que-fazemos p, .indicadores p, .recursos p, .mais-apoio p, .adicional p{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    padding: 25px;
+    text-align: center;
+    margin-top: 50px;
+}
+.quem-somos{
+    background-color: #f6e58d;
+}
+.o-que-fazemos{
+    background-color: #ffbe76;
+}
+.indicadores{
+    background-color: #ff7979;
+}
+.recursos{
+    background-color: #badc58;
+}
+.mais-apoio{
+    background-color: #22a6b3;
+}
+.adicional{
+    background-color: #535353;
 }
 
 @keyframes anim{
@@ -335,6 +402,38 @@ body{
     .menu-mobile{
         visibility: visible;
     }
+    .wrap{
+        top: 120px;
+    }
+    .quem-somos, .o-que-fazemos, .indicadores, .recursos, .mais-apoio{
+        display: inline-block;
+        transition: opacity 0.3s;
+        position: relative;
+        height: auto;
+        color: white;
+        margin: 10px;
+        border-radius: 10px;
+        min-height: 300px;
+    }
+    .quem-somos h, .o-que-fazemos h, .indicadores h, .recursos h, .mais-apoio h{
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        font-family: NexaBold;
+        font-size: 26px;
+        text-align: center;
+        margin-top: 20px;
+        width: 100%;
+    }
+    .quem-somos p, .o-que-fazemos p, .indicadores p, .recursos p, .mais-apoio p{
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        margin-top: 0px;
+        padding: 25px;
+        text-align: center;
+        margin-top: 50px;
+    }
 }
 @media screen and (max-width: 1100px){
     .logo{
@@ -370,3 +469,29 @@ body{
         left: 50%;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
