@@ -34,12 +34,12 @@
         <div class="background">
             <div class="darkner"></div>
             <img class="flair" draggable="false" src="../assets/flair.png">
-            <img draggable="false" src="../assets/centro-de-saude.jpg">
+            <img draggable="false" id="bg" src="../assets/centro-de-saude.jpg">
         </div>
 
         <div class="btns">
             <a class="close"><i class="fas fa-times"></i></a>
-            <a class="log"><i class="far fa-user"></i></a>
+            <a class="log"><i class="fas fa-user"></i></a>
             <a class="men" id="off"><i class="fas fa-bars"></i></a>
         </div>
         
@@ -67,12 +67,53 @@
                 <div class="quem-somos" id="quem-somos">
                     <h>Quem Somos?</h>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    
+                    <h2><i class="fab fa-wpforms"></i> Formulário</h2><br>
+                    <form state="off" id="qs" action="" method="GET">
+                        <h1>Entre em contacto!</h1><br>
+                        <label for="tipo">Tipo</label><br>
+                        <select id="tipo" name="tipo" required>
+                            <option value="esclarecimento">Esclarecimento de Dúvidas</option>
+                            <option value="reclamação">Reclamação</option>
+                            <option value="sugestoes">Sugestões</option>
+                        </select><br>
+                        <label for="email">Email</label><br>
+                        <input type="email" id="email" name="email" required><br>
+                        <label for="area-de-texto">Mensagem</label><br>
+                        <textarea id="area-de-texto" name="area-de-texto" required></textarea><br>
+                        <input type="submit" value="Enviar"><br>
+                    </form>
                 </div>
                 <div class="o-que-fazemos" id="o-que-fazemos">
                     <h>O Que Fazemos?</h>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    
+                    <h2><i class="fab fa-wpforms"></i> Formulário</h2><br>
+                    <form state="off" class="form-inline" id="oqf" action="" method="GET">
+                        <label for="nome">Nome</label><br>
+                        <input type="text" id="nome" name="nome" required><br>
+                        <label for="sexo">Sexo</label><br>
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <label for="male">Masculino</label>
+                        <input type="radio" id="female" name="gender" value="female" required>
+                        <label for="female">Feminino</label><br>
+                        <label for="cc">Cartão de Cidadão</label><br>
+                        <input type="number" min="0" max="99999999" id="cc" name="cc" required><br>
+                        <label for="idade">Idade</label><br>
+                        <input type="number" min="0" max="120" id="idade" name="idade" required><br>
+                        <label for="email">Email</label><br>
+                        <input type="email" id="email" name="email" required><br>
+                        <label for="morada">Morada</label><br>
+                        <input type="text" id="morada" name="morada" required><br>
+                        <label for="morada">Comentário</label><br>
+                        <textarea type="text" id="comentario" name="comentario"></textarea><br>
+                        <label for="medico">Médico de Família</label><br>
+                        <select id="medico" name="medico" required>
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="fiat">Fiat</option>
+                            <option value="audi">Audi</option>
+                        </select><br>
+                        <input type="submit" value="Enviar"><br>
+                    </form>
                 </div>
                 <div class="indicadores" id="indicadores">
                     <h>Indicadores</h>

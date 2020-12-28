@@ -3,6 +3,7 @@ $(document).ready(function(){
     emailRegex = /\S+@\S+\.\S+/
     $("body").css({"display": "block"})
     $(".notification, .wrap").hide()
+    $("form#oqf, form#qs").hide()
     $(".flair").css({
         "transition": "0.3s",
         "width": "0px"
@@ -18,7 +19,7 @@ $(document).ready(function(){
 
             $(".wrap").fadeIn()
             $(".darkner").css({"height": "0px"})
-            $(".background img").css({"height": "0px"})
+            $(".background img#bg").css({"height": "0px"})
         } else {
             $(".darkner").css({"background-color": "#111111d5"})
             $(".navbg").css({"background-color": "transparent"})
@@ -26,6 +27,25 @@ $(document).ready(function(){
             $(".wrap").fadeOut()
             $(".darkner").css({"height": "100vh"})
             $(".background img").css({"height": "100vh"})
+        }
+    })
+
+    $(".quem-somos h2").click(function(){
+        if($("form#qs").attr("state") == "off"){
+            $("form#qs").fadeIn()
+            $("form#qs").attr("state", "on")
+        } else {
+            $("form#qs").fadeOut()
+            $("form#qs").attr("state", "off")
+        }
+    })
+    $(".o-que-fazemos h2").click(function(){
+        if($("form#oqf").attr("state") == "off"){
+            $("form#oqf").fadeIn()
+            $("form#oqf").attr("state", "on")
+        } else {
+            $("form#oqf").fadeOut()
+            $("form#oqf").attr("state", "off")
         }
     })
 
