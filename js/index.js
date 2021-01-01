@@ -2,8 +2,8 @@ $(document).ready(function(){
 
     emailRegex = /\S+@\S+\.\S+/
     $("body").css({"display": "block"})
-    $(".notification, .wrap").hide()
-    $("form#oqf, form#qs").hide()
+    $(".notification, .wrap, .lout").hide()
+    $("form#oqf, form#qs, #success, #success p").hide()
     $(".flair").css({
         "transition": "0.3s",
         "width": "0px"
@@ -190,7 +190,28 @@ function checkCredentials(){
     } 
     else if(emailInput != "" && passwordInput != ""){
         if(emailInput == "tweb@isec.pt" && passwordInput == "tweb"){
-            alert("Correct!")
+            $(".flair, .loginBox, .registerBox").css({"position": "fixed"})
+            $(".loginBox, .registerBox").fadeOut()
+            $("#success").fadeIn()
+            setTimeout(() => {
+                $("#success h").fadeOut()
+                $("#success p").fadeIn()
+                $("#success p").css({"letter-spacing": "8px"})
+            }, 1000)
+            $(".flair").css({
+                "transition": "0.7s",
+                "width": "calc(100% + 1050px)"
+            });
+            setTimeout(() => {
+                $(".flair").css({
+                    "transition": "0.7s",
+                    "width": "550px",
+                    "opacity": "0.0"
+                });
+                $("#success").fadeOut()
+            }, 2000)
+            $(".close").fadeOut()
+            $(".lout").fadeIn()
         } else {
             showNotification("#log_in", "As credenciais introduzidas estão incorretas")
         }

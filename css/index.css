@@ -139,7 +139,7 @@ html{
     text-align: center;
 }
 
-.close, .log{
+.close, .log, .lout{
     z-index: 111;
     transition: color 0.3s;
     position: absolute;
@@ -173,6 +173,10 @@ html{
 .log:hover{
     transition: color 0.3s;
     color: rgb(255, 133, 51);
+}
+.lout:hover{
+    transition: color 0.3s;
+    color: rgb(255, 51, 51);
 }
 
 .logo{
@@ -278,7 +282,7 @@ html{
 .notification{
     display: flex;
     align-items: center;
-    z-index: 112;
+    z-index: 300;
     position: absolute;
     width: 250px;
     max-width: 250px;
@@ -298,6 +302,38 @@ html{
     padding-top: 3px;
     padding-bottom: 3px;
     margin: 0 auto;
+}
+
+#success{
+    z-index: 300;
+    position: absolute;
+    left: 50%; 
+    top: 50%;
+    width: 100vw;
+    height: 300px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+}
+#success h{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: AdiBold;
+    font-size: 40px;
+    color: white;
+}
+#success p{
+    transition: letter-spacing ease-in 1.5s;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: AdiLight;
+    font-size: 25px;
+    color: rgb(151, 151, 151);
+    letter-spacing: 0px;
 }
 
 form input[type="radio"]{
@@ -349,6 +385,8 @@ form textarea{
     border-radius: 7px;
     margin-bottom: 10px;
     margin-top: 5px;
+    resize: vertical;
+    font-family: Nexa Light;
 }
 
 form select{
@@ -408,7 +446,7 @@ form select{
     margin-top: 50px;
 }
 .quem-somos{
-    background-color: #f6e58d;
+    background-color: #f6c98d;
 }
 .o-que-fazemos{
     background-color: #ffbe76;
