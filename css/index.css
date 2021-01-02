@@ -142,7 +142,7 @@ html{
 .close, .log, .lout{
     z-index: 111;
     transition: color 0.3s;
-    position: absolute;
+    position: fixed;
     right: 25px;
     top: 23px;
     font-size: 35px;
@@ -330,7 +330,7 @@ html{
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    font-family: AdiLight;
+    font-family: Nexa Light;
     font-size: 25px;
     color: rgb(151, 151, 151);
     letter-spacing: 0px;
