@@ -3,7 +3,7 @@ $(document).ready(function(){
     emailRegex = /\S+@\S+\.\S+/
     $("body").css({"display": "block"})
     $(".notification, .wrap, .lout").hide()
-    $("form#oqf, form#qs, #success, #success p").hide()
+    $("form#oqf, form#qs, #success, #success p, #successR, #successR p").hide()
     $(".flair").css({
         "transition": "0.3s",
         "width": "0px"
@@ -234,7 +234,29 @@ function registerUser(){
     }
     else if(passwordInputR == ""){
         showNotification("#sign_up", "Por favor introduza uma palavra-passe")
-    } 
+    } else {
+        $(".loginBox, .registerBox").fadeOut()
+            $("#successR").fadeIn()
+            setTimeout(() => {
+                $("#successR h").fadeOut()
+                $("#successR p").fadeIn()
+                $("#successR p").css({"letter-spacing": "8px"})
+            }, 1000)
+            $(".flair").css({
+                "transition": "0.7s",
+                "width": "calc(100% + 1050px)"
+            });
+            setTimeout(() => {
+                $(".flair").css({
+                    "transition": "0.7s",
+                    "width": "550px",
+                    "opacity": "0.0"
+                });
+                $("#successR").fadeOut()
+            }, 2000)
+            $(".close").fadeOut()
+            $(".lout").fadeIn()
+    }
 
 }
 

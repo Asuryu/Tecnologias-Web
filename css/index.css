@@ -304,7 +304,7 @@ html{
     margin: 0 auto;
 }
 
-#success{
+#success, #successR{
     z-index: 300;
     position: absolute;
     left: 50%; 
@@ -315,7 +315,7 @@ html{
     transform: translate(-50%, -50%);
     text-transform: uppercase;
 }
-#success h{
+#success h, #successR h{
     position: absolute;
     left: 50%;
     top: 50%;
@@ -324,7 +324,7 @@ html{
     font-size: 40px;
     color: white;
 }
-#success p{
+#success p, #successR p{
     transition: letter-spacing ease-in 1.5s;
     position: absolute;
     left: 50%;
