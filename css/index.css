@@ -1,599 +1,749 @@
 @import url("fonts.css");
 
-*{
-    padding: 0;
-    margin: 0;
-    outline: none;
-    -webkit-tap-highlight-color:rgba(255, 255, 255, 0);
+* {
+	padding: 0;
+	margin: 0;
+	outline: none;
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
-body{
-    transition: 0.3s;
-    font-family: Nexa Light;
-    overflow-x: hidden;
-    height: 3000px;
-    background-color: #292929;
-    display: none;
-    
+body {
+	transition: 0.3s;
+	font-family: Nexa Light;
+	overflow-x: hidden;
+	height: 100vh;
+	display: none;
 }
 
-html{
-    scroll-behavior: smooth;
+html {
+	background-color: #252525;
 }
 
-.background img{
-    width: 100vw;
-    height: 100vh;
-    transform: scaleX(-1);
+.background img {
+	width: 100vw;
+	height: 100vh;
+	transform: scaleX(-1);
 }
-.background .flair{
-    transition: 0.7s;
-    width: 0px;
-    z-index: 108;
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 550px;
-    transform: scaleX(1);
-    filter: drop-shadow(0 3px 3px rgb(0, 0, 0));
-}
-
-  
-.loginBox, .registerBox{
-    display: block;
-    z-index: 109;
-    display: block;
-    position: absolute;
-    right: -70px;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    height: 300px;
-    border: none;
-    border-radius: 8px;
-}
-.registerBox{
-    left: 50%;
+.background .flair {
+	transition: 0.7s;
+	width: 0px;
+	z-index: 108;
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100vh;
+	width: 550px;
+	transform: scaleX(1);
+	filter: drop-shadow(0 3px 3px rgb(0, 0, 0));
 }
 
-.loginBox input, .registerBox input{
-    transition: font-size 0.3s;
-    position: relative;
-    left: 50%;
-    top: 50%;
-    background-color: #2d2d2d;
-    color: white;
-    transform: translate(-50%, -50%);
-    width: 270px;
-    height: 40px;
-    border: none;
-    border-radius: 24px;
-    padding-left: 50px;
-    padding-right: 20px;
-    margin-bottom: 10px;
-    font-size: 15px;
-    font-family: Nexa Light;
+.loginBox,
+.registerBox {
+	display: block;
+	z-index: 109;
+	display: block;
+	position: absolute;
+	right: -70px;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 300px;
+	height: 300px;
+	border: none;
+	border-radius: 8px;
 }
-.loginBox button, .registerBox button{
-    position: relative;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    transition: 0.3s;
-    width: 270px;
-    height: 40px;
-    border: none;
-    border-radius: 24px;
-    padding: 10px;
-    margin-top: 35px;
-    background-color: #ff3c00;
-    color: white;
-    cursor: pointer;
-    font-size: 18px;
-    font-family: Nexa Light;
-}
-.loginBox button:hover, .registerBox button:hover{
-    transition: 0.3s;
-    background-color: #af2900;
+.registerBox {
+	left: 50%;
 }
 
-.register-link{
-    position: relative;
-    left: 50%;
-    top: 58px;
-    transform: translate(-50%, 0%);
-    font-family: Nexa Light;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-
+.loginBox input,
+.registerBox input {
+	transition: font-size 0.3s;
+	position: relative;
+	left: 50%;
+	top: 50%;
+	background-color: #2d2d2d;
+	color: white;
+	transform: translate(-50%, -50%);
+	width: 270px;
+	height: 40px;
+	border: none;
+	border-radius: 24px;
+	padding-left: 50px;
+	padding-right: 20px;
+	margin-bottom: 10px;
+	font-size: 15px;
+	font-family: Nexa Light;
 }
-.register-link a{
-    color: #ff3c00; 
-    cursor: pointer;
+.loginBox button,
+.registerBox button {
+	position: relative;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	transition: 0.3s;
+	width: 270px;
+	height: 40px;
+	border: none;
+	border-radius: 24px;
+	padding: 10px;
+	margin-top: 35px;
+	background-color: #ff3c00;
+	color: white;
+	cursor: pointer;
+	font-size: 18px;
+	font-family: Nexa Light;
 }
-.register-link a:hover{
-    text-decoration: underline;
-}
-
-.title{
-    position: absolute;
-    left: 50%;
-    top: -10px;
-    transform: translate(-50%, 0%);
-    color: white;
-    font-family: NexaBold;
-    font-size: 65px;
-    text-align: center;
-}
-.subtitle{
-    position: absolute;
-    left: 50%;
-    top: 75px;
-    width: 300px;
-    transform: translate(-50%, 0%);
-    color: white;
-    font-family: Nexa Light;
-    font-size: 17px;
-    text-align: center;
-}
-
-.close, .log, .lout{
-    z-index: 111;
-    transition: color 0.3s;
-    position: fixed;
-    right: 25px;
-    top: 23px;
-    font-size: 35px;
-    color: white;
-    cursor: pointer;
-}
-.men{
-    z-index: 111;
-    transition: 0.3s;
-    visibility: hidden;
-    transition: color 0.3s;
-    position: absolute;
-    left: 25px;
-    top: 23px;
-    width: 35px;
-    font-size: 35px;
-    color: white;
-    cursor: pointer;
-}
-.men:hover{
-    transition: color 0.3s;
-    color: #8e44ad;
-}
-.close:hover{
-    transition: color 0.3s;
-    color: rgb(255, 51, 51);
-}
-.log:hover{
-    transition: color 0.3s;
-    color: rgb(255, 133, 51);
-}
-.lout:hover{
-    transition: color 0.3s;
-    color: rgb(255, 51, 51);
+.loginBox button:hover,
+.registerBox button:hover {
+	transition: 0.3s;
+	background-color: #af2900;
 }
 
-.logo{
-    z-index: 107;
-    position: absolute;
-    top: -3px;
-    left: 0px;
-    height: 90px;
+.register-link {
+	position: relative;
+	left: 50%;
+	top: 58px;
+	transform: translate(-50%, 0%);
+	font-family: Nexa Light;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+}
+.register-link a {
+	color: #ff3c00;
+	cursor: pointer;
+}
+.register-link a:hover {
+	text-decoration: underline;
 }
 
-.darkner{
-    transition: background-color 0.3s;
-    z-index: 1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #111111d5;
+.title {
+	position: absolute;
+	left: 50%;
+	top: -10px;
+	transform: translate(-50%, 0%);
+	color: white;
+	font-family: NexaBold;
+	font-size: 65px;
+	text-align: center;
+}
+.subtitle {
+	position: absolute;
+	left: 50%;
+	top: 75px;
+	width: 300px;
+	transform: translate(-50%, 0%);
+	color: white;
+	font-family: Nexa Light;
+	font-size: 17px;
+	text-align: center;
 }
 
-.flip{
-    transform: rotate(180deg);
+.close,
+.log,
+.lout {
+	z-index: 111;
+	transition: color 0.3s;
+	position: fixed;
+	right: 25px;
+	top: 23px;
+	font-size: 35px;
+	color: white;
+	cursor: pointer;
 }
-.anim{
-    animation: anim 1s linear;
+.men {
+	z-index: 111;
+	transition: 0.3s;
+	visibility: hidden;
+	transition: color 0.3s;
+	position: absolute;
+	left: 25px;
+	top: 23px;
+	width: 35px;
+	font-size: 35px;
+	color: white;
+	cursor: pointer;
 }
-
-.navbg{
-    z-index: 100;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 80px;
+.men:hover {
+	transition: color 0.3s;
+	color: #8e44ad;
 }
-
-.menu-mobile{
-    z-index: 106;
-    visibility: hidden;
-    background-color: #292929;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+.close:hover {
+	transition: color 0.3s;
+	color: rgb(255, 51, 51);
 }
-.hey{
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
+.log:hover {
+	transition: color 0.3s;
+	color: rgb(255, 133, 51);
 }
-.menu-mobile a{
-    display: block;
-    position: relative;
-    transition: 0.3s;
-    font-size: 24px;
-    text-transform: uppercase;
-    color: white;
-    font-family: NexaBold;
-    cursor: pointer;
-    text-align: center;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    padding-top: 10px;
-    padding-bottom: 10px;
-    animation: swipeRight 1s;
-    text-decoration: none;
-}
-.menu-mobile a:hover{
-    transition: 0.3s;
-    color: rgb(255, 145, 0);
+.lout:hover {
+	transition: color 0.3s;
+	color: rgb(255, 51, 51);
 }
 
-.navbar{
-    z-index: 106;
-    transition: opacity 0.3s;
-    opacity: 1.0;
-    transition: background-color 0.3s;
-    z-index: 100;
-    position: absolute;
-    left: 125px;
-    top: 30px;
-    width: 100vw;
-}
-.navbar a{
-    transition: 0.3s;
-    padding: 24px;
-    font-size: 20px;
-    text-transform: uppercase;
-    color: white;
-    font-family: NexaBold;
-    cursor: pointer;
-    text-decoration: none;
-}
-.navbar a:hover{
-    transition: 0.3s;
-    color: rgb(255, 145, 0);
+.logo {
+	z-index: 107;
+	position: absolute;
+	top: -3px;
+	left: 0px;
+	height: 90px;
 }
 
-.notification{
-    display: flex;
-    align-items: center;
-    z-index: 300;
-    position: absolute;
-    width: 250px;
-    max-width: 250px;
-    height: 37px;
-    border-radius: 10px;
-    background-color: rgba(255, 0, 0, 0.301);
-    color: white;
-    font-family: Nexa Light;
-    font-size: 15px;
-    border: solid 2px red;
-    top: -80px;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    text-align: center;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    margin: 0 auto;
+.darkner {
+	transition: background-color 0.3s;
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: #252525;
 }
 
-#success, #successR{
-    z-index: 300;
-    position: absolute;
-    left: 50%; 
-    top: 50%;
-    width: 100vw;
-    height: 300px;
-    text-align: center;
-    transform: translate(-50%, -50%);
-    text-transform: uppercase;
+.flip {
+	transform: rotate(180deg);
 }
-#success h, #successR h{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-family: AdiBold;
-    font-size: 40px;
-    color: white;
-}
-#success p, #successR p{
-    transition: letter-spacing ease-in 1.5s;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-family: Nexa Light;
-    font-size: 25px;
-    color: rgb(151, 151, 151);
-    letter-spacing: 0px;
+.anim {
+	animation: anim 1s linear;
 }
 
-form input[type="radio"]{
-    display: inline;
-    width: 30px;
-    height: 30px;
-    vertical-align: middle;
+.navbg {
+	z-index: 100;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 80px;
+	background-color: #212121;
 }
 
-form input[type="submit"]{
-    transition: 0.3s;
-    display: inline;
-    width: 96%;
-    height: 30px;
-    background-color: rgb(255, 145, 0);
-    color: white;
-    font-family: NexaBold;
-    font-size: 15px;
-    margin-top: 10px;
-    cursor: pointer;
+.menu-mobile {
+	z-index: 106;
+	visibility: hidden;
+	background-color: #292929;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+}
+.hey {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 300px;
+}
+.menu-mobile a {
+	display: block;
+	position: relative;
+	transition: 0.3s;
+	font-size: 24px;
+	text-transform: uppercase;
+	color: white;
+	font-family: NexaBold;
+	cursor: pointer;
+	text-align: center;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	padding-top: 10px;
+	padding-bottom: 10px;
+	animation: swipeRight 1s;
+	text-decoration: none;
+}
+.menu-mobile a:hover {
+	transition: 0.3s;
+	color: rgb(255, 145, 0);
 }
 
-form input[type="submit"]:hover{
-    transition: 0.3s;
-    background-color: rgb(223, 141, 35);;
+.navbar {
+	z-index: 106;
+	transition: opacity 0.3s;
+	opacity: 1.0;
+	transition: background-color 0.3s;
+	z-index: 100;
+	position: absolute;
+	left: 125px;
+	top: 30px;
+	width: 100vw;
+}
+.navbar a {
+	transition: 0.3s;
+	padding: 24px;
+	font-size: 20px;
+	text-transform: uppercase;
+	color: white;
+	font-family: NexaBold;
+	cursor: pointer;
+	text-decoration: none;
+}
+.navbar a:hover {
+	transition: 0.3s;
+	color: rgb(255, 145, 0);
 }
 
-form textarea{
-    padding: 10px;
+.notification {
+	display: flex;
+	align-items: center;
+	z-index: 300;
+	position: absolute;
+	width: 250px;
+	max-width: 250px;
+	height: 37px;
+	border-radius: 10px;
+	background-color: rgba(255, 0, 0, 0.301);
+	color: white;
+	font-family: Nexa Light;
+	font-size: 15px;
+	border: solid 2px red;
+	top: -80px;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	margin: 0 auto;
 }
 
-form input{
-    position: relative;
-    width: 96%;
-    height: 30px;
-    border: none;
-    border-radius: 7px;
-    margin-bottom: 10px;
-    margin-top: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
+#success,
+#successR {
+	z-index: 300;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 100vw;
+	height: 300px;
+	text-align: center;
+	transform: translate(-50%, -50%);
+	text-transform: uppercase;
+}
+#success h,
+#successR h {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	font-family: AdiBold;
+	font-size: 40px;
+	color: white;
+}
+#success p,
+#successR p {
+	transition: letter-spacing ease-in 1.5s;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	font-family: Nexa Light;
+	font-size: 25px;
+	color: rgb(151, 151, 151);
+	letter-spacing: 0px;
 }
 
-form textarea{
-    position: relative;
-    width: 96%;
-    height: 60px;
-    border: none;
-    border-radius: 7px;
-    margin-bottom: 10px;
-    margin-top: 5px;
-    resize: vertical;
-    font-family: Nexa Light;
+span {
+	font-family: AdiHausB;
 }
 
-form select{
-    position: relative;
-    width: 96%;
-    height: 30px;
-    border: none;
-    border-radius: 7px;
-    margin-bottom: 10px;
-    margin-top: 5px;
-    text-align: center;
+form input[type="radio"] {
+	display: inline;
+	width: 30px;
+	height: 30px;
+	vertical-align: middle;
 }
 
-.wrap{
-    z-index: 2;
-    top: 300px;
-    display: inline-block;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    text-align: center;
-    width: 100vw;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+form input[type="submit"] {
+	transition: 0.3s;
+	display: inline;
+	width: 100%;
+	height: 30px;
+	background-color: rgb(255, 145, 0);
+	color: white;
+	font-family: NexaBold;
+	font-size: 15px;
+	margin-top: 10px;
+	cursor: pointer;
 }
 
-.wrap h2{
-    cursor: pointer;
+form input[type="submit"]:hover {
+	transition: 0.3s;
+	background-color: rgb(223, 141, 35);
 }
 
-.quem-somos, .o-que-fazemos, .indicadores, .recursos, .mais-apoio, .adicional{
-    display: inline-block;
-    transition: opacity 0.3s;
-    position: relative;
-    height: auto;
-    color: white;
-    margin: 5px;
-    border-radius: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0,0,0,.05), 2px 2px 5px rgba(0,0,0,.1);
-}
-.quem-somos h, .o-que-fazemos h, .indicadores h, .recursos h, .mais-apoio h, .adicional h{
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    font-family: NexaBold;
-    font-size: 26px;
-    text-align: center;
-    margin-top: 20px;
-    width: 100%;
-}
-.quem-somos p, .o-que-fazemos p, .indicadores p, .recursos p, .mais-apoio p, .adicional p{
-    position: relative;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    padding: 25px;
-    text-align: center;
-    margin-top: 50px;
-}
-.quem-somos{
-    background-color: #f6c98d;
-}
-.o-que-fazemos{
-    background-color: #ffbe76;
-}
-.indicadores{
-    background-color: #ff7979;
-}
-.recursos{
-    background-color: #badc58;
-}
-.mais-apoio{
-    background-color: #22a6b3;
-}
-.adicional{
-    background-color: #535353;
+form textarea {
+	padding: 10px;
 }
 
-@keyframes anim{
-    0%{
-        width: initial;
-    }
-    100%{
-        width: 100%;
-    }
-}
-@keyframes anim2{
-    0%{
-        width: initial;
-    }
-    100%{
-        width: 0%;
-    }
+form input {
+	position: relative;
+	width: 100%;
+	height: 30px;
+	border: none;
+	border-radius: 7px;
+	margin-bottom: 10px;
+	margin-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
-@media screen and (max-width: 600px){
-    .loginBox, .registerBox{
-        left: 50%;
-    }
-    .logo{
-        z-index: 107;
-        left: 50%;
-        transform: translate(-50%, 0%);
-    }
-    .subtitle{
-        width: 300px;
-        height: 30px;
-        top: 80px;
-    }
-    .men{
-        transition: 0.3s;
-        visibility: visible;
-        position: absolute;
-        left: 25px;
-    }
-    .menu-mobile{
-        visibility: visible;
-    }
-    .wrap{
-        top: 120px;
-    }
-    .quem-somos, .o-que-fazemos, .indicadores, .recursos, .mais-apoio{
-        display: inline-block;
-        transition: opacity 0.3s;
-        position: relative;
-        height: auto;
-        color: white;
-        margin: 10px;
-        border-radius: 10px;
-        min-height: 300px;
-    }
-    .quem-somos h, .o-que-fazemos h, .indicadores h, .recursos h, .mais-apoio h{
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%, 0%);
-        font-family: NexaBold;
-        font-size: 26px;
-        text-align: center;
-        margin-top: 20px;
-        width: 100%;
-    }
-    .quem-somos p, .o-que-fazemos p, .indicadores p, .recursos p, .mais-apoio p{
-        position: relative;
-        left: 50%;
-        transform: translate(-50%, 0%);
-        margin-top: 0px;
-        padding: 25px;
-        text-align: center;
-        margin-top: 50px;
-    }
-}
-@media screen and (max-width: 1100px){
-    .logo{
-        z-index: 107;
-        left: 50%;
-        transform: translate(-50%, 0%);
-    }
-    .navbar{
-        transition: opacity 0.3s;
-        opacity: 0.0;
-    }
-    .men{
-        transition: 0.3s;
-        visibility: visible;
-        position: absolute;
-        right: 25px;
-    }
-    .menu-mobile{
-        visibility: visible;
-    }
+form textarea {
+	position: relative;
+	width: 100%;
+	height: 60px;
+	border: none;
+	border-radius: 7px;
+	margin-bottom: 10px;
+	margin-top: 5px;
+	resize: vertical;
+	font-family: Nexa Light;
 }
 
-.navbar, .logo, .close, .log, .men{
-    user-select: none;
-    position: fixed;
+form select {
+	position: relative;
+	width: 100%;
+	height: 30px;
+	border: none;
+	border-radius: 7px;
+	margin-bottom: 10px;
+	margin-top: 5px;
+	text-align: center;
+}
+option {
+	width: 20px;
+	height: 30px;
 }
 
-@keyframes swipeRight{
-    0%{
-        left: 0;
-    }
-    100%{
-        left: 50%;
-    }
+.wrap {
+	z-index: 2;
+	top: 300px;
+	display: inline-block;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	text-align: center;
+	width: 100vw;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
+.wrap h2 {
+	cursor: pointer;
+}
 
+.quem-somos,
+.o-que-fazemos,
+.indicadores,
+.recursos,
+.mais-apoio,
+.adicional {
+	display: inline-block;
+	transition: opacity 0.3s;
+	position: relative;
+	height: auto;
+	color: white;
+	margin: 5px;
+	border-radius: 10px;
+	border-radius: 10px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, .05), 2px 2px 5px rgba(0, 0, 0, .1);
+}
+.quem-somos h,
+.o-que-fazemos h,
+.indicadores h,
+.recursos h,
+.mais-apoio h,
+.adicional h {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	font-family: NexaBold;
+	font-size: 26px;
+	text-align: center;
+	margin-top: 20px;
+	width: 100%;
+}
+.quem-somos p,
+.o-que-fazemos p,
+.indicadores p,
+.recursos p,
+.mais-apoio p,
+.adicional p {
+	position: relative;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	padding: 25px;
+	text-align: center;
+	margin-top: 50px;
+}
+.quem-somos {
+	background-color: #f6c98d;
+}
+.o-que-fazemos {
+	background-color: #ffbe76;
+}
+.indicadores {
+	background-color: #ff7979;
+}
+.recursos {
+	background-color: #badc58;
+}
+.mais-apoio {
+	background-color: #22a6b3;
+}
+.adicional {
+	background-color: #535353;
+}
 
+@keyframes anim {
+	0% {
+		width: initial;
+	}
+	100% {
+		width: 100%;
+	}
+}
+@keyframes anim2 {
+	0% {
+		width: initial;
+	}
+	100% {
+		width: 0%;
+	}
+}
 
+@media screen and (max-width: 600px) {
+	.items {
+		display: grid;
+		grid-template-columns: 100%;
+		grid-template-rows: 1fr 1fr 1fr;
+	}
+	.loginBox,
+	.registerBox {
+		left: 50%;
+	}
+	.logo {
+		z-index: 107;
+		left: 50%;
+		transform: translate(-50%, 0%);
+	}
+	.subtitle {
+		width: 300px;
+		height: 30px;
+		top: 80px;
+	}
+	.men {
+		transition: 0.3s;
+		visibility: visible;
+		position: absolute;
+		left: 25px;
+	}
+	.menu-mobile {
+		visibility: visible;
+	}
+	.wrap {
+		top: 120px;
+	}
+	.quem-somos,
+	.o-que-fazemos,
+	.indicadores,
+	.recursos,
+	.mais-apoio {
+		display: inline-block;
+		transition: opacity 0.3s;
+		position: relative;
+		height: auto;
+		color: white;
+		margin: 10px;
+		border-radius: 10px;
+		min-height: 300px;
+	}
+	.quem-somos h,
+	.o-que-fazemos h,
+	.indicadores h,
+	.recursos h,
+	.mais-apoio h {
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, 0%);
+		font-family: NexaBold;
+		font-size: 26px;
+		text-align: center;
+		margin-top: 20px;
+		width: 100%;
+	}
+	.quem-somos p,
+	.o-que-fazemos p,
+	.indicadores p,
+	.recursos p,
+	.mais-apoio p {
+		position: relative;
+		left: 50%;
+		transform: translate(-50%, 0%);
+		margin-top: 0px;
+		padding: 25px;
+		text-align: center;
+		margin-top: 50px;
+	}
+}
+@media screen and (max-width: 1100px) {
+	.logo {
+		z-index: 107;
+		left: 50%;
+		transform: translate(-50%, 0%);
+	}
+	.navbar {
+		transition: opacity 0.3s;
+		opacity: 0.0;
+	}
+	.men {
+		transition: 0.3s;
+		visibility: visible;
+		position: absolute;
+		right: 25px;
+	}
+	.menu-mobile {
+		visibility: visible;
+	}
+}
 
+.navbar,
+.logo,
+.close,
+.log,
+.men {
+	user-select: none;
+	position: fixed;
+}
 
+@keyframes swipeRight {
+	0% {
+		left: 0;
+	}
+	100% {
+		left: 50%;
+	}
+}
 
+.container {
+	z-index: 99;
+	position: absolute;
+	width: 100vw;
+	height: auto;
+	left: 50%;
+	top: 80px;
+	transform: translate(-50%, 0%);
+}
 
+.sec-title {
+	position: absolute;
+	left: 30px;
+	top: 30px;
+	font-family: AdiBold;
+	color: white;
+	font-size: 40px;
+}
+.sec-subtitle {
+	position: absolute;
+	left: 30px;
+	top: 75px;
+	font-family: AdiLight;
+	color: rgb(190, 190, 190);
+	font-size: 20px;
+	margin-right: 30px;
+}
 
+label {
+	color: white;
+	font-family: AdiHausB;
+}
 
+iframe,
+form {
+	width: calc(100vw - 60px);
+	min-width: 300px;
+	border-radius: 7px;
+	margin-bottom: 30px;
+}
 
+.items {
+	position: absolute;
+	top: 130px;
+	width: 100vw;
+	display: flex;
+	margin-right: 230px;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-top: 30px;
+}
+.items div {
+	margin-left: 30px;
+	margin-bottom: 30px;
+}
+.items:first-child {
+	margin-top: 30px;
+}
+.items div i {
+	color: white;
+	font-size: 25px;
+	margin-right: 5px;
+}
+.items div ul {
+	margin-top: 10px;
+	margin-left: 24px;
+	color: white;
+	font-size: 20px;
+}
+ul li {
+	margin-bottom: 10px;
+}
+.items div h {
+	color: white;
+	font-size: 25px;
+	font-family: AdiBold;
+	margin-bottom: 10px;
+	margin-right: 30px;
+}
+.items div p {
+	color: white;
+	font-size: 16px;
+	font-family: AdiHausL;
+	margin-bottom: 10px;
+	margin-right: 30px;
+}
 
+#qs {
+	margin: 0;
+}
 
+.wrap-team {
+	width: 100%;
+	height: 230px;
+	border-radius: 7px;
+}
 
+.wrap-team .w {
+	position: absolute;
+	display: flex;
+	left: 0;
+	flex-direction: row;
+	overflow: scroll;
+	margin: 0;
+	width: 100%;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+.wrap-team .memberBox {
+	flex-shrink: 0;
+	position: relative;
+	width: 150px;
+	height: 150px;
+	border-radius: 7px;
+	margin-left: 10px;
+	background-color: rgba(212, 167, 255, 0.26);
+	left: 20px;
+	top: 20px;
+	background-size: 100% 100%;
+	color: white;
+	text-align: center;
+	font-family: AdiBold;
+	text-shadow: 2px 2px 3px rgb(39, 39, 39);
+	line-height: 260px;
+}

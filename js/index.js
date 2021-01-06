@@ -1,113 +1,37 @@
 $(document).ready(function(){
 
     emailRegex = /\S+@\S+\.\S+/
+
     $("body").css({"display": "block"})
-    $(".notification, .wrap, .lout").hide()
-    $("form#oqf, form#qs, #success, #success p, #successR, #successR p").hide()
+
+    $(".notification, .wrap, .lout, .wrap2, .container").hide()
+    $("#success, #success p, #successR, #successR p").hide()
+    $(".flair, .registerBox, .loginBox, .close, .menu-mobile").hide()
+
     $(".flair").css({
         "transition": "0.3s",
         "width": "0px"
     })
 
-    $(".flair, .registerBox, .loginBox, .close, .menu-mobile").hide()
-
-    $(window).scroll(function(){
-        var scroll = $(window).scrollTop();
-        if (scroll > 0){
-            $(".darkner").css({"background-color": "#292929"})
-            $(".navbg").css({"background-color": "#212121"})
-
-            $(".wrap").fadeIn()
-            $(".darkner").css({"height": "0px"})
-            $(".background img#bg").css({"height": "0px"})
-        } else {
-            $(".darkner").css({"background-color": "#111111d5"})
-            $(".navbg").css({"background-color": "transparent"})
-
-            $(".wrap").fadeOut()
-            $(".darkner").css({"height": "100vh"})
-            $(".background img").css({"height": "100vh"})
-        }
-    })
-
-    $(".quem-somos h2").click(function(){
-        if($("form#qs").attr("state") == "off"){
-            $("form#qs").fadeIn()
-            $("form#qs").attr("state", "on")
-        } else {
-            $("form#qs").fadeOut()
-            $("form#qs").attr("state", "off")
-        }
-    })
-    $(".o-que-fazemos h2").click(function(){
-        if($("form#oqf").attr("state") == "off"){
-            $("form#oqf").fadeIn()
-            $("form#oqf").attr("state", "on")
-        } else {
-            $("form#oqf").fadeOut()
-            $("form#oqf").attr("state", "off")
-        }
-    })
-
     $("#0, #5").click(function(){
-        $(".wrap").fadeIn()
-        $("#quem-somos")[0].scrollIntoView({
-            behavior: 'auto',
-            block: 'center',
-            inline: 'center'
-        });
-        $("#quem-somos").css({"opacity": "0.5"})
-        setTimeout(function(){
-            $("#quem-somos").css({"opacity": "1.0"})
-        }, 300)
+        $("#mais-apoio, #indicadores, #recursos, #o-que-fazemos, #quem-somos").fadeOut()
+        $("#quem-somos").fadeIn()
     })
     $("#1, #6").click(function(){
-        $(".wrap").fadeIn()
-        $("#o-que-fazemos")[0].scrollIntoView({
-            behavior: 'auto',
-            block: 'center',
-            inline: 'center'
-        });
-        $("#o-que-fazemos").css({"opacity": "0.5"})
-        setTimeout(function(){
-            $("#o-que-fazemos").css({"opacity": "1.0"})
-        }, 300)
+        $("#mais-apoio, #indicadores, #recursos, #o-que-fazemos, #quem-somos").fadeOut()
+        $("#o-que-fazemos").fadeIn()
     })
     $("#2, #7").click(function(){
-        $(".wrap").fadeIn()
-        $("#indicadores")[0].scrollIntoView({
-            behavior: 'auto',
-            block: 'center',
-            inline: 'center'
-        });
-        $("#indicadores").css({"opacity": "0.5"})
-        setTimeout(function(){
-            $("#indicadores").css({"opacity": "1.0"})
-        }, 300)
+        $("#mais-apoio, #indicadores, #recursos, #o-que-fazemos, #quem-somos").fadeOut()
+        $("#indcadores").fadeIn()
     })
     $("#3, #8").click(function(){
-        $(".wrap").fadeIn()
-        $("#recursos")[0].scrollIntoView({
-            behavior: 'auto',
-            block: 'center',
-            inline: 'center'
-        });
-        $("#recursos").css({"opacity": "0.5"})
-        setTimeout(function(){
-            $("#recursos").css({"opacity": "1.0"})
-        }, 300)
+        $("#mais-apoio, #indicadores, #recursos, #o-que-fazemos, #quem-somos").fadeOut()
+        $("#recursos").fadeIn()
     })
     $("#4, #9").click(function(){
-        $(".wrap").fadeIn()
-        $("#mais-apoio")[0].scrollIntoView({
-            behavior: 'auto',
-            block: 'center',
-            inline: 'center'
-        });
-        $("#mais-apoio").css({"opacity": "0.5"})
-        setTimeout(function(){
-            $("#mais-apoio").css({"opacity": "1.0"})
-        }, 300)
+        $("#mais-apoio, #indicadores, #recursos, #o-que-fazemos, #quem-somos").fadeOut()
+        $("#mais-apoio").fadeIn()
     })
 
     $(".men").click(function(){
@@ -122,7 +46,6 @@ $(document).ready(function(){
             $(".men").attr("id", "off")
         }
     })
-
     $(".register-link a#register").click(function(){
         $(".flair, .loginBox, .registerBox").css({"position": "fixed"})
         $(".loginBox").fadeOut();
@@ -146,7 +69,6 @@ $(document).ready(function(){
             $(".loginBox").fadeIn();
         }, 700)
     })
-
     $(".close").click(function(){
         $(".flair").fadeOut()
         $(".men").fadeIn()

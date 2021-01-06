@@ -70,14 +70,34 @@
             <p class="register-link">ou pode fazer <a id="login">login</a></p>
         </div>
 
-        <div class="wrap2">
-            <div class="wrap">
-                <div class="quem-somos" id="quem-somos">
-                    <h>Quem Somos?</h>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <h2><i class="fab fa-wpforms"></i> Formulário</h2><br>
-                    <form state="off" id="qs" action="" method="GET">
-                        <h1>Entre em contacto!</h1><br>
+        <div id="quem-somos" class="container">
+            <h class="sec-title">Quem Somos?</h>
+            <h class="sec-subtitle">Quer saber mais sobre nós? Está no sítio certo!</h>
+            <div class="items">
+                <div class="missao" style="grid-area: a">
+                    <i style="color: rgb(179, 255, 0)" class="far fa-flag"></i><h> Missão</h>
+                    <p>Prestação de cuidados de saúde personalizados à população inscrita na área geográfica da USF Aliança, garantindo a acessibilidade, a globalidade, a qualidade e a continuidade dos mesmos. </p>
+                </div>
+                <div class="visao" style="grid-area: a">
+                    <i style="color: rgb(0, 132, 255)" class="far fa-eye"></i><h> Visão</h>
+                    <p>Ser uma USF de excelência, sólida e atenta, capaz de otimizar os recursos disponíveis, garantindo em toda a região serviços com padrões de qualidade técnico-profissional e diferenciação, centrados nas necessidades de saúde e características da população nela inscrita, proporcionando mais e melhor saúde, confiança e satisfação.</p>
+                </div>
+                <div class="valores" style="grid-area: a">
+                    <i style="color: rgb(255, 0, 64)" class="far fa-heart"></i><h> Valores</h>
+                    <ul>
+                        <li>Conciliação</li>
+                        <li>Cooperação</li>
+                        <li>Solidariedade</li>
+                        <li>Autonomia</li>
+                        <li>Articulação</li>
+                        <li>Avaliação</li>
+                        <li>Gestão participativa</li>
+                      </ul>
+                </div>
+                <div class="form" style="grid-area: c">
+                    <i style="color: rgb(255, 174, 0);" class="fab fa-wpforms"></i><h> Formulário</h>
+                    <p>Caso tenha alguma dúvida, reclamação ou sugestão não hesite em contactar-nos!</p>
+                    <form id="qs" action="" method="GET">
                         <label for="tipo">Tipo</label><br>
                         <select id="tipo" name="tipo" required>
                             <option value="esclarecimento">Esclarecimento de Dúvidas</option>
@@ -91,11 +111,51 @@
                         <input type="submit" value="Enviar"><br>
                     </form>
                 </div>
-                <div class="o-que-fazemos" id="o-que-fazemos">
-                    <h>O Que Fazemos?</h>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <h2><i class="fab fa-wpforms"></i> Formulário</h2><br>
-                    <form state="off" class="form-inline" id="oqf" action="" method="GET">
+                <div class="wrap-team">
+                    <i style="color: rgb(116, 122, 197)" class="fas fa-users"></i><h> Equipa</h>
+                    <div class="w">
+                        <div class="memberBox" style="background-image: url('https://s3-sa-east-1.amazonaws.com/doctoralia.com.br/doctor/427d5a/427d5a8b77a349c7d3a214c0329af23a_large.jpg');">Dr.ª Nicole Vieira</div>
+                        <div class="memberBox" style="background-image: url('https://media-exp1.licdn.com/dms/image/C5603AQEKETz5ML9PMw/profile-displayphoto-shrink_200_200/0/1607271684569?e=1613606400&v=beta&t=oOp61JH7Tc18coxOziZ7IUQDa_EB8-fc_AFpoKlTlsA');">Dr.ª Susana Rios</div>
+                        <div class="memberBox" style="background-image: url('https://mimed.pt/storage/app/uploads/public/5fe/b1c/744/5feb1c7447c55222462036.png');">Enf.ª Ana Pessoa</div>
+                        <div class="memberBox" style="background-image: url('https://media-exp1.licdn.com/dms/image/C5603AQHS4lRBbjHFVg/profile-displayphoto-shrink_200_200/0?e=1610582400&v=beta&t=yDEa4ai2vLIyITMyxdaWXlWAgdU6F7BcHjofjs7KaTk');">SC. Salomé Oliveira</div>
+                    </div>
+                </div>
+                <div class="map" style="grid-area: a">
+                    <i style="color: rgb(255, 47, 47)" class="fas fa-map-marker-alt"></i><h> Morada</h>
+                    <p>USF Aliança<br>Rua do Mosteiro nº 2473<br>3720-350 Vila de Cucujães</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1508.3982797975516!2d-8.504635527110606!3d40.87633861121402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa81e850346180003!2sUSF%20Alian%C3%A7a!5e0!3m2!1spt-PT!2spt!4v1609941816671!5m2!1spt-PT!2spt" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>    
+                </div>
+                <div class="location" style="grid-area: b">
+                    <i style="color: rgb(187, 104, 255)" class="far fa-clock"></i><h> Horário de Atendimento</h>
+                    <p>Horário de Funcionamento<br><span>De 2ª a 6ª feira:</span> 08:00 às 20:00<br><span>Sábados, domingos e feriados:</span> Encerrado</p>
+                </div>
+                <div class="contacts" style="grid-area: c">
+                    <i style="color: rgb(163, 106, 52)" class="fas fa-phone"></i><h> Outros contactos</h>
+                    <p><span>Email:</span> usf.alianca@arsnorte.min-saude.pt<br><span>Telefone:</span> 256 891 666</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="o-que-fazemos" class="container">
+            <h class="sec-title">O Que Fazemos?</h>
+            <h class="sec-subtitle">A USF tem imenso para oferecer! Venha descobrir o que fazemos!</h>
+            <div class="items">
+                <div class="valores" style="grid-area: a">
+                    <i style="color: rgb(255, 0, 64)" class="far fa-heart"></i><h> Atividades</h>
+                    <ul>
+                        <li>Lorem Ipsum</li>
+                        <li>Lorem Ipsum</li>
+                        <li>Lorem Ipsum</li>
+                        <li>Lorem Ipsum</li>
+                        <li>Lorem Ipsum</li>
+                        <li>Lorem Ipsum</li>
+                        <li>Lorem Ipsum</li>
+                      </ul>
+                </div>
+                <div class="form" style="grid-area: c">
+                    <i style="color: rgb(255, 174, 0)" class="fab fa-wpforms"></i><h> Escolha um médico</h>
+                    <p>Nesta secção pode escolher um médico de família, preencha o formulário com os seus dados pessoais.</p>
+                    <form class="form-inline" id="oqf" action="" method="GET">
                         <label for="nome">Nome</label><br>
                         <input type="text" id="nome" name="nome" required><br>
                         <label for="sexo">Sexo</label><br>
@@ -113,33 +173,63 @@
                         <input type="text" id="morada" name="morada" required><br>
                         <label for="morada">Comentário</label><br>
                         <textarea type="text" id="comentario" name="comentario"></textarea><br>
-                        <label for="medico">Médico de Família</label><br>
+                        <label for="medico">Especialidade</label><br>
                         <select id="medico" name="medico" required>
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="fiat">Fiat</option>
-                            <option value="audi">Audi</option>
+                            <option value="anes">Anestesiologia</option>
+                            <option value="card">Cardiologia</option>
+                            <option value="cg">Cirurgia Geral</option>
+                            <option value="cv">Cirurgia Vascular</option>
+                            <option value="derm">Dermatologia</option>
+                            <option value="di">Doenças Infecciosas</option>
                         </select><br>
                         <input type="submit" value="Enviar"><br>
                     </form>
-                </div>
-                <div class="indicadores" id="indicadores">
-                    <h>Indicadores</h>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    
-                </div>
-                <div class="recursos" id="recursos">
-                    <h>Recursos</h>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    
-                </div>
-                <div class="mais-apoio" id="mais-apoio">
-                    <h>Mais Apoio</h>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    
+
                 </div>
             </div>
-        
+        </div>
+
+        <div id="mais-apoio" class="container">
+            <h class="sec-title">Mais Apoio</h>
+            <h class="sec-subtitle">Quer saber mais sobre nós? Está no sítio certo!</h>
+            <div class="items">
+                <div class="emergencia" style="grid-area: a">
+                    <i style="color: rgb(255, 0, 55)" class="fas fa-first-aid"></i><h> Linhas de Emergência</h>
+                    <p>Prestação de cuidados de saúde personalizados à população inscrita na área geográfica da USF Aliança, garantindo a acessibilidade, a globalidade, a qualidade e a continuidade dos mesmos. </p>
+                </div>
+                <div class="apoio" style="grid-area: a">
+                    <i style="color: rgb(255, 115, 0)" class="fas fa-phone"></i><h> Linhas de Apoio Nacionais</h>
+                    <p>Ser uma USF de excelência, sólida e atenta, capaz de otimizar os recursos disponíveis, garantindo em toda a região serviços com padrões de qualidade técnico-profissional e diferenciação, centrados nas necessidades de saúde e características da população nela inscrita, proporcionando mais e melhor saúde, confiança e satisfação.</p>
+                </div>
+                <div class="uteis" style="grid-area: a">
+                    <i style="color: rgb(176, 142, 255)" class="fas fa-ribbon"></i><h> Ligações Úteis</h>
+                    <ul>
+                        <li>Conciliação</li>
+                        <li>Cooperação</li>
+                        <li>Solidariedade</li>
+                        <li>Autonomia</li>
+                        <li>Articulação</li>
+                        <li>Avaliação</li>
+                        <li>Gestão participativa</li>
+                      </ul>
+                </div>
+                <div class="unidades" style="grid-area: a">
+                    <i style="color: rgb(142, 219, 255)" class="fas fa-clinic-medical"></i><h> Outras Unidades</h>
+                    <ul>
+                        <li>Conciliação</li>
+                        <li>Cooperação</li>
+                        <li>Solidariedade</li>
+                        <li>Autonomia</li>
+                        <li>Articulação</li>
+                        <li>Avaliação</li>
+                        <li>Gestão participativa</li>
+                      </ul>
+                </div>
+                <div class="faq" style="grid-area: c">
+                    <i style="color: rgb(247, 200, 45)" class="fas fa-question"></i><h> FAQ</h>
+                    <p><span>Email:</span> usf.alianca@arsnorte.min-saude.pt<br><span>Telefone:</span> 256 891 666</p>
+                </div>
+            </div>
         </div>
 
     </body>
