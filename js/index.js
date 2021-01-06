@@ -4,34 +4,52 @@ $(document).ready(function(){
 
     $("body").css({"display": "block"})
 
-    $(".notification, .wrap, .lout, .wrap2, .container").hide()
+    $(".notification, .wrap, .lout, .wrap2, .container, .navbg").hide()
     $("#success, #success p, #successR, #successR p").hide()
     $(".flair, .registerBox, .loginBox, .close, .menu-mobile").hide()
+    $("#bg").fadeIn()
 
     $(".flair").css({
         "transition": "0.3s",
         "width": "0px"
     })
 
+    $("#logo").click(function(){
+        $(".darkner").css({"opacity": "0.95"})
+        $(".container").fadeOut()
+        $(".main").fadeIn()
+        $(".navbg").fadeOut()
+    })
+
     $("#0, #5").click(function(){
+        $(".darkner").css({"opacity": "1.0"})
         $("#mais-apoio, #indicadores, #recursos, #o-que-fazemos, #quem-somos").fadeOut()
         $("#quem-somos").fadeIn()
+        $(".navbg").fadeIn()
     })
     $("#1, #6").click(function(){
+        $(".darkner").css({"opacity": "1.0"})
         $("#mais-apoio, #indicadores, #recursos, #o-que-fazemos, #quem-somos").fadeOut()
         $("#o-que-fazemos").fadeIn()
+        $(".navbg").fadeIn()
     })
     $("#2, #7").click(function(){
+        $(".darkner").css({"opacity": "1.0"})
         $("#mais-apoio, #indicadores, #recursos, #o-que-fazemos, #quem-somos").fadeOut()
         $("#indcadores").fadeIn()
+        $(".navbg").fadeIn()
     })
     $("#3, #8").click(function(){
+        $(".darkner").css({"opacity": "1.0"})
         $("#mais-apoio, #indicadores, #recursos, #o-que-fazemos, #quem-somos").fadeOut()
         $("#recursos").fadeIn()
+        $(".navbg").fadeIn()
     })
     $("#4, #9").click(function(){
+        $(".darkner").css({"opacity": "1.0"})
         $("#mais-apoio, #indicadores, #recursos, #o-que-fazemos, #quem-somos").fadeOut()
         $("#mais-apoio").fadeIn()
+        $(".navbg").fadeIn()
     })
 
     $(".men").click(function(){
