@@ -26,30 +26,35 @@ $(document).ready(function(){
         $("#mais-apoio, #indicadores, #recursos, #o-que-fazemos, #quem-somos").fadeOut()
         $("#quem-somos").fadeIn()
         $(".navbg").fadeIn()
+        $(".main").fadeOut()
     })
     $("#1, #6").click(function(){
         $(".darkner").css({"opacity": "1.0"})
         $("#mais-apoio, #indicadores, #recursos, #o-que-fazemos, #quem-somos").fadeOut()
         $("#o-que-fazemos").fadeIn()
         $(".navbg").fadeIn()
+        $(".main").fadeOut()
     })
     $("#2, #7").click(function(){
         $(".darkner").css({"opacity": "1.0"})
         $("#mais-apoio, #indicadores, #recursos, #o-que-fazemos, #quem-somos").fadeOut()
         $("#indcadores").fadeIn()
         $(".navbg").fadeIn()
+        $(".main").fadeOut()
     })
     $("#3, #8").click(function(){
         $(".darkner").css({"opacity": "1.0"})
         $("#mais-apoio, #indicadores, #recursos, #o-que-fazemos, #quem-somos").fadeOut()
         $("#recursos").fadeIn()
         $(".navbg").fadeIn()
+        $(".main").fadeOut()
     })
     $("#4, #9").click(function(){
         $(".darkner").css({"opacity": "1.0"})
         $("#mais-apoio, #indicadores, #recursos, #o-que-fazemos, #quem-somos").fadeOut()
         $("#mais-apoio").fadeIn()
         $(".navbg").fadeIn()
+        $(".main").fadeOut()
     })
 
     $(".men").click(function(){
