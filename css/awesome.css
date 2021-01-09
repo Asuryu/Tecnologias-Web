@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("fonts.css");
 * {
   margin: 0;
@@ -250,7 +251,7 @@ html {
 .log:hover {
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
-  color: #ff8533;
+  color: #33ff88;
 }
 
 .lout:hover {
@@ -674,6 +675,14 @@ form option {
   margin-right: 30px;
 }
 
+bruh {
+  color: #ff7300;
+}
+
+bruh2 {
+  color: #ff0037;
+}
+
 .items {
   position: absolute;
   top: 130px;
@@ -749,6 +758,102 @@ form option {
 .items .unidades a:hover {
   color: skyblue;
   text-decoration: underline;
+}
+
+.items .imagem {
+  margin-right: 30px;
+}
+
+.items .imagem img {
+  border-radius: 7px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.items .análise p {
+  max-width: 1000px;
+}
+
+.items .faq div {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin: 0;
+  margin-right: 30px;
+  position: relative;
+  left: 0;
+  transition: 0.3s;
+  height: auto;
+  min-height: 50px;
+  border-radius: 7px;
+  background-color: #2b2b2b;
+  margin-top: 10px;
+  cursor: pointer;
+  padding-left: 10px;
+  -webkit-box-shadow: 8px 8px 23px 0px rgba(0, 0, 0, 0.39);
+  box-shadow: 8px 8px 23px 0px rgba(0, 0, 0, 0.39);
+}
+
+.items .faq div p {
+  position: absolute;
+  width: 100%;
+  color: white;
+  font-family: AdiBold;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 16px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.items .faq .pergunta:hover {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background-color: #b68721;
+}
+
+.items .faq .active {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background-color: #b68721;
+}
+
+.items .faq .resposta {
+  display: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0;
+  min-height: 0px;
+  height: 0px;
+  margin-top: 3px;
+  font-family: AdiLight;
+  padding: 10px;
+  cursor: auto;
+}
+
+.items .faq .resposta h4 {
+  color: white;
+  font-size: 17px;
+  font-family: AdiLight;
+}
+
+.items .faq .resposta ul {
+  font-size: 17px;
+}
+
+.items .faq .resposta p {
+  position: absolute;
+  width: 100%;
+  color: white;
+  font-family: AdiLight;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 14px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .items:first-child {

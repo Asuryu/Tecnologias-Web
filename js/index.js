@@ -20,6 +20,107 @@ $(document).ready(function(){
         }
     })
 
+    $("#q0").click(function(){
+        if($(this).attr("state") == "off"){
+            $(this).attr("state", "on")
+            $(this).addClass("active")
+            $("#r0").css({
+                "display": "block",
+                "opacity": "1.0",
+                "height": "auto",
+            })
+        }
+        else if($(this).attr("state") == "on"){
+            $(this).attr("state", "off")
+            $(this).removeClass("active")
+            $("#r0").css({
+                "display": "none",
+                "opacity": "0",
+                "height": "0px",
+            })
+        }
+    })
+    $("#q1").click(function(){
+        if($(this).attr("state") == "off"){
+            $(this).attr("state", "on")
+            $(this).addClass("active")
+            $("#r1").css({
+                "display": "block",
+                "opacity": "1.0",
+                "height": "auto",
+            })
+        }
+        else if($(this).attr("state") == "on"){
+            $(this).attr("state", "off")
+            $(this).removeClass("active")
+            $("#r1").css({
+                "display": "none",
+                "opacity": "0",
+                "height": "0px",
+            })
+        }
+    })
+    $("#q2").click(function(){
+        if($(this).attr("state") == "off"){
+            $(this).attr("state", "on")
+            $(this).addClass("active")
+            $("#r2").css({
+                "display": "block",
+                "opacity": "1.0",
+                "height": "auto",
+            })
+        }
+        else if($(this).attr("state") == "on"){
+            $(this).attr("state", "off")
+            $(this).removeClass("active")
+            $("#r2").css({
+                "display": "none",
+                "opacity": "0",
+                "height": "0px",
+            })
+        }
+    })
+    $("#q3").click(function(){
+        if($(this).attr("state") == "off"){
+            $(this).attr("state", "on")
+            $(this).addClass("active")
+            $("#r3").css({
+                "display": "block",
+                "opacity": "1.0",
+                "height": "auto",
+            })
+        }
+        else if($(this).attr("state") == "on"){
+            $(this).attr("state", "off")
+            $(this).removeClass("active")
+            $("#r3").css({
+                "display": "none",
+                "opacity": "0",
+                "height": "0px",
+            })
+        }
+    })
+    $("#q4").click(function(){
+        if($(this).attr("state") == "off"){
+            $(this).attr("state", "on")
+            $(this).addClass("active")
+            $("#r4").css({
+                "display": "block",
+                "opacity": "1.0",
+                "height": "auto",
+            })
+        }
+        else if($(this).attr("state") == "on"){
+            $(this).attr("state", "off")
+            $(this).removeClass("active")
+            $("#r4").css({
+                "display": "none",
+                "opacity": "0",
+                "height": "0px",
+            })
+        }
+    })
+
     $("body").css({"display": "block"})
 
     $(".notification, .wrap, .lout, .wrap2, .container, .navbg").hide()
