@@ -2,6 +2,24 @@ $(document).ready(function(){
 
     emailRegex = /\S+@\S+\.\S+/
 
+    document.querySelectorAll('input').forEach(item => {
+        if(item.id == "email" || item.id == "pwd"){
+            item.addEventListener('keyup', event => {
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    checkCredentials()
+                }
+              })
+        } else if(item.id == "email_reg" || item.id == "pwd_reg"){
+            item.addEventListener('keyup', event => {
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    registerUser()
+                }
+              })
+        }
+    })
+
     $("body").css({"display": "block"})
 
     $(".notification, .wrap, .lout, .wrap2, .container, .navbg").hide()
@@ -150,7 +168,7 @@ function checkCredentials(){
             setTimeout(() => {
                 $(".flair").css({
                     "transition": "0.7s",
-                    "width": "550px",
+                    "width": "0px",
                     "opacity": "0.0"
                 });
                 $("#success").fadeOut()
