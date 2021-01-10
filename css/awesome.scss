@@ -228,7 +228,7 @@ html {
 }
 .log:hover {
 	transition: color $transition-time;
-	color: rgb(51, 255, 136);
+	color: rgb(59, 207, 116);
 }
 .lout:hover {
 	transition: color $transition-time;
@@ -691,9 +691,10 @@ bruh2 {
 	}
 	.faq {
 		div {
+			width: 600px;
 			transition: $transition-time;
 			margin: 0;
-			margin-right: $margpad;
+			margin-right: 50px;
 			position: relative;
 			left: 0;
 			transition: $transition-time;
@@ -702,23 +703,23 @@ bruh2 {
 			border-radius: 7px;
 			background-color: rgb(43, 43, 43);
 			margin-top: 10px;
+			padding: 10px;
 			cursor: pointer;
-			padding-left: 10px;
 			-webkit-box-shadow: 8px 8px 23px 0px rgba(0, 0, 0, 0.39);
 			-moz-box-shadow: 8px 8px 23px 0px rgba(0, 0, 0, 0.39);
 			box-shadow: 8px 8px 23px 0px rgba(0, 0, 0, 0.39);
 
 			p {
 				position: absolute;
-				width: 100%;
+				width: calc(100% - 30px);
 				color: $text-color;
 				font-family: $primary-font;
-				left: 50%;
+				left: 0;
 				top: 50%;
-				transform: $expressionT;
+				transform: translate(0%, -50%);
 				font-size: 16px;
-				margin-left: 10px;
-				margin-right: 10px;
+				padding-left: 20px;
+				padding-right: 20px;
 			}
 		}
 		.pergunta:hover {
@@ -744,6 +745,8 @@ bruh2 {
 				color: white;
 				font-size: 17px;
 				font-family: $secondary-font;
+				font-weight: 100;
+				padding: 10px;
 			}
 
 			ul {
@@ -761,6 +764,7 @@ bruh2 {
 				font-size: 14px;
 				margin-left: 10px;
 				margin-right: 10px;
+				padding: 10px;
 			}
 		}
 	}
@@ -865,6 +869,13 @@ bruh2 {
 	}
 	.menu-mobile {
 		visibility: visible;
+	}
+	.items {
+		.faq {
+			div {
+				width: calc(100% - 30px);
+			}
+		}
 	}
 }
 

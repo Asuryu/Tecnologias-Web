@@ -251,7 +251,7 @@ html {
 .log:hover {
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
-  color: #33ff88;
+  color: #3bcf74;
 }
 
 .lout:hover {
@@ -775,10 +775,11 @@ bruh2 {
 }
 
 .items .faq div {
+  width: 600px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   margin: 0;
-  margin-right: 30px;
+  margin-right: 50px;
   position: relative;
   left: 0;
   transition: 0.3s;
@@ -787,24 +788,24 @@ bruh2 {
   border-radius: 7px;
   background-color: #2b2b2b;
   margin-top: 10px;
+  padding: 10px;
   cursor: pointer;
-  padding-left: 10px;
   -webkit-box-shadow: 8px 8px 23px 0px rgba(0, 0, 0, 0.39);
   box-shadow: 8px 8px 23px 0px rgba(0, 0, 0, 0.39);
 }
 
 .items .faq div p {
   position: absolute;
-  width: 100%;
+  width: calc(100% - 30px);
   color: white;
   font-family: AdiBold;
-  left: 50%;
+  left: 0;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
   font-size: 16px;
-  margin-left: 10px;
-  margin-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .items .faq .pergunta:hover {
@@ -836,6 +837,8 @@ bruh2 {
   color: white;
   font-size: 17px;
   font-family: AdiLight;
+  font-weight: 100;
+  padding: 10px;
 }
 
 .items .faq .resposta ul {
@@ -854,6 +857,7 @@ bruh2 {
   font-size: 14px;
   margin-left: 10px;
   margin-right: 10px;
+  padding: 10px;
 }
 
 .items:first-child {
@@ -970,6 +974,9 @@ bruh2 {
   }
   .menu-mobile {
     visibility: visible;
+  }
+  .items .faq div {
+    width: calc(100% - 30px);
   }
 }
 
