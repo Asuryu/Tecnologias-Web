@@ -377,7 +377,7 @@ function registerUser() {
         setTimeout(() => {
             $(".flair").css({
                 "transition": "0.7s",
-                "width": "550px",
+                "width": "0px",
                 "opacity": "0.0"
             });
             $("#successR").fadeOut()
