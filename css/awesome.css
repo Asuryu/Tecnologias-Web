@@ -13,10 +13,12 @@ body {
   display: none;
   background-color: #252525;
   height: 100%;
+  width: 100%;
 }
 
 html {
   background-color: #252525;
+  width: 100%;
   height: 100%;
 }
 
@@ -413,7 +415,7 @@ html {
 #success,
 #successR {
   z-index: 300;
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   width: 100vw;
@@ -426,7 +428,7 @@ html {
 
 #success h,
 #successR h {
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -440,7 +442,7 @@ html {
 #successR p {
   -webkit-transition: letter-spacing ease-in 1.5s;
   transition: letter-spacing ease-in 1.5s;
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -745,6 +747,52 @@ bruh2 {
   text-decoration: underline;
 }
 
+.items .valores .atividades {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  overflow-y: hidden;
+  margin: 0;
+  width: 100vw;
+}
+
+.items .valores .atividades div {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  position: relative;
+  width: 200px;
+  height: 300px;
+  border-radius: 7px;
+  margin-left: 10px;
+  background-color: rgba(255, 199, 167, 0.26);
+  left: 20px;
+  top: 20px;
+  padding-top: 10px;
+  color: white;
+  font-family: AdiBold;
+  font-size: 18px;
+  text-align: center;
+  text-shadow: 2px 2px 3px #272727;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: transparent;
+}
+
+.items .valores .atividades div:hover {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0.6;
+}
+
 .items #carousel {
   width: 100%;
   height: 100%;
@@ -950,7 +998,7 @@ bruh2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  left: 0;
+  left: -30px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;

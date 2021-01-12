@@ -213,6 +213,7 @@ $(document).ready(function () {
         $(".main").fadeOut()
     })
     $("#2, #7").click(function () {
+        slideIndex = 1
         $("form").trigger("reset")
         $(".darkner").css({ "opacity": "1.0" })
         $("#mais-apoio, #indicadores, #recursos, #o-que-fazemos, #quem-somos").fadeOut()
@@ -338,6 +339,7 @@ function checkCredentials() {
             }, 2000)
             $(".close").fadeOut()
             $(".lout").fadeIn()
+            $(".men").fadeIn()
         } else {
             showNotification("#log_in", "As credenciais introduzidas estão incorretas")
         }

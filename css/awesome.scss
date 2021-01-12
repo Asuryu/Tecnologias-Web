@@ -21,10 +21,12 @@ body {
 	display: none;
 	background-color: $bg-color;
 	height: 100%;
+	width: 100%;
 }
 
 html {
 	background-color: $bg-color;
+	width: 100%;
 	height: 100%;
 }
 
@@ -370,7 +372,7 @@ html {
 #success,
 #successR {
 	z-index: 300;
-	position: absolute;
+	position: fixed;
 	left: 50%;
 	top: 50%;
 	width: 100vw;
@@ -380,7 +382,7 @@ html {
 	text-transform: uppercase;
 
 	h {
-		position: absolute;
+		position: fixed;
 		left: 50%;
 		top: 50%;
 		transform: $expressionT;
@@ -391,7 +393,7 @@ html {
 
 	p {
 		transition: letter-spacing ease-in 1.5s;
-		position: absolute;
+		position: fixed;
 		left: 50%;
 		top: 50%;
 		transform: translate(-50%, -50%);
@@ -659,6 +661,49 @@ bruh2 {
 			text-decoration: underline;
 		}
 	}
+
+	.valores {
+		.atividades {
+			position: relative;
+			display: flex;
+			flex-direction: row;
+			overflow-y: hidden;
+			margin: 0;
+			width: 100vw;
+
+			div {
+				transition: $transition-time;
+				cursor: pointer;
+				flex-shrink: 0;
+				position: relative;
+				width: 200px;
+				height: 300px;
+				border-radius: 7px;
+				margin-left: 10px;
+				background-color: rgba(255, 199, 167, 0.26);
+				left: 20px;
+				top: 20px;
+
+				padding-top: 10px;
+
+				color: white;
+				font-family: $primary-font;
+				font-size: 18px;
+				text-align: center;
+				text-shadow: 2px 2px 3px rgb(39, 39, 39);
+
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-color: transparent;
+			}
+			div:hover {
+				transition: $transition-time;
+				opacity: 0.6;
+			}
+		}
+	}
+
 	#carousel {
 		width: 100%;
 		height: 100%;
@@ -847,7 +892,7 @@ bruh2 {
 	.w {
 		position: absolute;
 		display: flex;
-		left: 0;
+		left: -30px;
 		flex-direction: row;
 		overflow-y: hidden;
 		margin: 0;
