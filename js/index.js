@@ -1,27 +1,83 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
+    var slideIndex = 1
     emailRegex = /\S+@\S+\.\S+/
 
     document.querySelectorAll('input').forEach(item => {
-        if(item.id == "email" || item.id == "pwd"){
+        if (item.id == "email" || item.id == "pwd") {
             item.addEventListener('keyup', event => {
                 if (event.keyCode === 13) {
                     event.preventDefault();
                     checkCredentials()
                 }
-              })
-        } else if(item.id == "email_reg" || item.id == "pwd_reg"){
+            })
+        } else if (item.id == "email_reg" || item.id == "pwd_reg") {
             item.addEventListener('keyup', event => {
                 if (event.keyCode === 13) {
                     event.preventDefault();
                     registerUser()
                 }
-              })
+            })
         }
     })
 
-    $("#q0").click(function(){
-        if($(this).attr("state") == "off"){
+    $("#graph2, #graph3, #graph4, #graph5, #graph6").hide()
+
+    $("#next").click(function () {
+
+        if ($("#carousel").attr("slide") == "6") {
+            $("#i" + slideIndex).removeClass("current")
+            $("#graph6").hide()
+            slideIndex = 1
+            $("#carousel").attr("slide", slideIndex)
+            $("#graph1").show()
+            $("#i" + slideIndex).addClass("current")
+        } else {
+            $("#i" + slideIndex).removeClass("current")
+            $("#graph" + slideIndex).hide()
+            slideIndex += 1
+            $("#carousel").attr("slide", slideIndex)
+            $("#graph" + slideIndex).show()
+            $("#i" + slideIndex).addClass("current")
+        }
+
+        drawChart1();
+        drawChart2();
+        drawChart3();
+        drawChart4();
+        drawChart5();
+        drawChart6();
+
+    })
+    $("#prev").click(function () {
+
+        if ($("#carousel").attr("slide") == "1") {
+            $("#i" + slideIndex).removeClass("current")
+            $("#graph1").hide()
+            slideIndex = 6
+            $("#carousel").attr("slide", slideIndex)
+            $("#graph6").show()
+            $("#i" + slideIndex).addClass("current")
+        } else {
+            $("#i" + slideIndex).removeClass("current")
+            $("#graph" + slideIndex).hide()
+            slideIndex -= 1
+            $("#carousel").attr("slide", slideIndex)
+            $("#graph" + slideIndex).show()
+            $("#i" + slideIndex).addClass("current")
+        }
+
+        drawChart1();
+        drawChart2();
+        drawChart3();
+        drawChart4();
+        drawChart5();
+        drawChart6();
+
+    })
+
+    $("#q0").click(function () {
+        if ($(this).attr("state") == "off") {
             $(this).attr("state", "on")
             $(this).addClass("active")
             $("#r0").css({
@@ -30,7 +86,7 @@ $(document).ready(function(){
                 "height": "auto",
             })
         }
-        else if($(this).attr("state") == "on"){
+        else if ($(this).attr("state") == "on") {
             $(this).attr("state", "off")
             $(this).removeClass("active")
             $("#r0").css({
@@ -40,8 +96,8 @@ $(document).ready(function(){
             })
         }
     })
-    $("#q1").click(function(){
-        if($(this).attr("state") == "off"){
+    $("#q1").click(function () {
+        if ($(this).attr("state") == "off") {
             $(this).attr("state", "on")
             $(this).addClass("active")
             $("#r1").css({
@@ -50,7 +106,7 @@ $(document).ready(function(){
                 "height": "auto",
             })
         }
-        else if($(this).attr("state") == "on"){
+        else if ($(this).attr("state") == "on") {
             $(this).attr("state", "off")
             $(this).removeClass("active")
             $("#r1").css({
@@ -60,8 +116,8 @@ $(document).ready(function(){
             })
         }
     })
-    $("#q2").click(function(){
-        if($(this).attr("state") == "off"){
+    $("#q2").click(function () {
+        if ($(this).attr("state") == "off") {
             $(this).attr("state", "on")
             $(this).addClass("active")
             $("#r2").css({
@@ -70,7 +126,7 @@ $(document).ready(function(){
                 "height": "auto",
             })
         }
-        else if($(this).attr("state") == "on"){
+        else if ($(this).attr("state") == "on") {
             $(this).attr("state", "off")
             $(this).removeClass("active")
             $("#r2").css({
@@ -80,8 +136,8 @@ $(document).ready(function(){
             })
         }
     })
-    $("#q3").click(function(){
-        if($(this).attr("state") == "off"){
+    $("#q3").click(function () {
+        if ($(this).attr("state") == "off") {
             $(this).attr("state", "on")
             $(this).addClass("active")
             $("#r3").css({
@@ -90,7 +146,7 @@ $(document).ready(function(){
                 "height": "auto",
             })
         }
-        else if($(this).attr("state") == "on"){
+        else if ($(this).attr("state") == "on") {
             $(this).attr("state", "off")
             $(this).removeClass("active")
             $("#r3").css({
@@ -100,8 +156,8 @@ $(document).ready(function(){
             })
         }
     })
-    $("#q4").click(function(){
-        if($(this).attr("state") == "off"){
+    $("#q4").click(function () {
+        if ($(this).attr("state") == "off") {
             $(this).attr("state", "on")
             $(this).addClass("active")
             $("#r4").css({
@@ -110,7 +166,7 @@ $(document).ready(function(){
                 "height": "auto",
             })
         }
-        else if($(this).attr("state") == "on"){
+        else if ($(this).attr("state") == "on") {
             $(this).attr("state", "off")
             $(this).removeClass("active")
             $("#r4").css({
@@ -121,7 +177,7 @@ $(document).ready(function(){
         }
     })
 
-    $("body").css({"display": "block"})
+    $("body").css({ "display": "block" })
 
     $(".notification, .wrap, .lout, .wrap2, .container, .navbg").hide()
     $("#success, #success p, #successR, #successR p").hide()
@@ -133,63 +189,69 @@ $(document).ready(function(){
         "width": "0px"
     })
 
-    $("#logo").click(function(){
-        $(".darkner").css({"opacity": "0.95"})
+    $("#logo").click(function () {
+        $(".darkner").css({ "opacity": "0.95" })
         $(".container").fadeOut()
         $(".main").fadeIn()
         $(".navbg").fadeOut()
     })
 
-    $("#0, #5").click(function(){
-        $(".darkner").css({"opacity": "1.0"})
+    $("#0, #5").click(function () {
+        $("form").trigger("reset")
+        $(".darkner").css({ "opacity": "1.0" })
         $("#mais-apoio, #indicadores, #recursos, #o-que-fazemos, #quem-somos").fadeOut()
         $("#quem-somos").fadeIn()
         $(".navbg").fadeIn()
         $(".main").fadeOut()
     })
-    $("#1, #6").click(function(){
-        $(".darkner").css({"opacity": "1.0"})
+    $("#1, #6").click(function () {
+        $("form").trigger("reset")
+        $(".darkner").css({ "opacity": "1.0" })
         $("#mais-apoio, #indicadores, #recursos, #o-que-fazemos, #quem-somos").fadeOut()
         $("#o-que-fazemos").fadeIn()
         $(".navbg").fadeIn()
         $(".main").fadeOut()
     })
-    $("#2, #7").click(function(){
-        $(".darkner").css({"opacity": "1.0"})
+    $("#2, #7").click(function () {
+        $("form").trigger("reset")
+        $(".darkner").css({ "opacity": "1.0" })
         $("#mais-apoio, #indicadores, #recursos, #o-que-fazemos, #quem-somos").fadeOut()
-        $("#indcadores").fadeIn()
+        $("#indicadores").fadeIn()
         $(".navbg").fadeIn()
         $(".main").fadeOut()
+        drawChart1();
     })
-    $("#3, #8").click(function(){
-        $(".darkner").css({"opacity": "1.0"})
+    $("#3, #8").click(function () {
+        $("form").trigger("reset")
+        $(".darkner").css({ "opacity": "1.0" })
         $("#mais-apoio, #indicadores, #recursos, #o-que-fazemos, #quem-somos").fadeOut()
         $("#recursos").fadeIn()
         $(".navbg").fadeIn()
         $(".main").fadeOut()
     })
-    $("#4, #9").click(function(){
-        $(".darkner").css({"opacity": "1.0"})
+    $("#4, #9").click(function () {
+        $("form").trigger("reset")
+        $(".darkner").css({ "opacity": "1.0" })
         $("#mais-apoio, #indicadores, #recursos, #o-que-fazemos, #quem-somos").fadeOut()
         $("#mais-apoio").fadeIn()
         $(".navbg").fadeIn()
         $(".main").fadeOut()
     })
 
-    $(".men").click(function(){
-        if($(".men").attr("id") == "off"){
+    $(".men").click(function () {
+        if ($(".men").attr("id") == "off") {
             $(".men").html('<i class="fas fa-times"></i>')
             $(".menu-mobile").fadeIn()
             $(".men").attr("id", "on")
         }
-        else{
+        else {
             $(".men").html('<i class="fas fa-bars"></i>')
             $(".menu-mobile").fadeOut()
             $(".men").attr("id", "off")
         }
     })
-    $(".register-link a#register").click(function(){
-        $(".flair, .loginBox, .registerBox").css({"position": "fixed"})
+    $(".register-link a#register").click(function () {
+        $(".flair, .loginBox, .registerBox").css({ "position": "fixed" })
         $(".loginBox").fadeOut();
         $(".close i").addClass("flip")
         $(".flair").css({
@@ -200,8 +262,8 @@ $(document).ready(function(){
             $(".registerBox").fadeIn();
         }, 700)
     })
-    $(".register-link a#login").click(function(){
-        $(".flair, .loginBox, .registerBox").css({"position": "fixed"})
+    $(".register-link a#login").click(function () {
+        $(".flair, .loginBox, .registerBox").css({ "position": "fixed" })
         $(".registerBox").fadeOut();
         $(".flair").css({
             "transition": "0.7s",
@@ -211,10 +273,10 @@ $(document).ready(function(){
             $(".loginBox").fadeIn();
         }, 700)
     })
-    $(".close").click(function(){
+    $(".close").click(function () {
         $(".flair").fadeOut()
         $(".men").fadeIn()
-        $(".flair, .loginBox, .registerBox").css({"position": "fixed"})
+        $(".flair, .loginBox, .registerBox").css({ "position": "fixed" })
         $(".registerBox, .loginBox, .close").fadeOut()
         $(".flair").css({
             "transition": "0.7s",
@@ -222,10 +284,10 @@ $(document).ready(function(){
         });
         $(".log").fadeIn()
     })
-    $(".log").click(function(){
+    $(".log").click(function () {
         $(".flair").fadeIn()
         $(".men").fadeOut()
-        $(".flair, .loginBox, .registerBox").css({"position": "fixed"})
+        $(".flair, .loginBox, .registerBox").css({ "position": "fixed" })
         $(".log").fadeOut()
         $(".flair").css({
             "transition": "0.7s",
@@ -236,31 +298,31 @@ $(document).ready(function(){
 
 })
 
-function checkCredentials(){
+function checkCredentials() {
     var emailInput = document.getElementById("email").value;
     var passwordInput = document.getElementById("pwd").value;
 
-    if(emailInput == "" && passwordInput == ""){
+    if (emailInput == "" && passwordInput == "") {
         $(".notification#log_in").fadeOut()
     }
-    else if(emailInput == ""){
+    else if (emailInput == "") {
         showNotification("#log_in", "Por favor introduza um endereço de email")
     }
-    else if(emailInput != "" && !emailRegex.test(emailInput)){
+    else if (emailInput != "" && !emailRegex.test(emailInput)) {
         showNotification("#log_in", "O endereço de email introduzido é inválido")
     }
-    else if(passwordInput == ""){
+    else if (passwordInput == "") {
         showNotification("#log_in", "Por favor introduza a palavra-passe")
-    } 
-    else if(emailInput != "" && passwordInput != ""){
-        if(emailInput == "tweb@isec.pt" && passwordInput == "tweb"){
-            $(".flair, .loginBox, .registerBox").css({"position": "fixed"})
+    }
+    else if (emailInput != "" && passwordInput != "") {
+        if (emailInput == "tweb@isec.pt" && passwordInput == "tweb") {
+            $(".flair, .loginBox, .registerBox").css({ "position": "fixed" })
             $(".loginBox, .registerBox").fadeOut()
             $("#success").fadeIn()
             setTimeout(() => {
                 $("#success h").fadeOut()
                 $("#success p").fadeIn()
-                $("#success p").css({"letter-spacing": "8px"})
+                $("#success p").css({ "letter-spacing": "8px" })
             }, 1000)
             $(".flair").css({
                 "transition": "0.7s",
@@ -281,58 +343,58 @@ function checkCredentials(){
         }
     }
 
-}   
+}
 
-function registerUser(){
+function registerUser() {
     var emailInputR = document.getElementById("email_reg").value;
     var passwordInputR = document.getElementById("pwd_reg").value;
 
-    if(emailInputR == "" && passwordInputR == ""){
+    if (emailInputR == "" && passwordInputR == "") {
         $(".notification#sign_up").fadeOut()
     }
-    else if(emailInputR == ""){
+    else if (emailInputR == "") {
         showNotification("#sign_up", "Por favor introduza um endereço de email")
     }
-    else if(emailInputR != "" && !emailRegex.test(emailInputR)){
+    else if (emailInputR != "" && !emailRegex.test(emailInputR)) {
         showNotification("#sign_up", "O endereço de email introduzido é inválido")
     }
-    else if(passwordInputR == ""){
+    else if (passwordInputR == "") {
         showNotification("#sign_up", "Por favor introduza uma palavra-passe")
     } else {
         $(".loginBox, .registerBox").fadeOut()
-            $("#successR").fadeIn()
-            setTimeout(() => {
-                $("#successR h").fadeOut()
-                $("#successR p").fadeIn()
-                $("#successR p").css({"letter-spacing": "8px"})
-            }, 1000)
+        $("#successR").fadeIn()
+        setTimeout(() => {
+            $("#successR h").fadeOut()
+            $("#successR p").fadeIn()
+            $("#successR p").css({ "letter-spacing": "8px" })
+        }, 1000)
+        $(".flair").css({
+            "transition": "0.7s",
+            "width": "calc(100% + 1050px)"
+        });
+        setTimeout(() => {
             $(".flair").css({
                 "transition": "0.7s",
-                "width": "calc(100% + 1050px)"
+                "width": "550px",
+                "opacity": "0.0"
             });
-            setTimeout(() => {
-                $(".flair").css({
-                    "transition": "0.7s",
-                    "width": "550px",
-                    "opacity": "0.0"
-                });
-                $("#successR").fadeOut()
-            }, 2000)
-            $(".close").fadeOut()
-            $(".lout").fadeIn()
+            $("#successR").fadeOut()
+        }, 2000)
+        $(".close").fadeOut()
+        $(".lout").fadeIn()
     }
 
 }
 
-function showNotification(selector, message){
+function showNotification(selector, message) {
     $(selector).fadeIn()
     $(selector).html("<center>" + message + "</center>")
-    setTimeout(function(){
+    setTimeout(function () {
         $(selector).fadeOut()
     }, 2500)
 }
 
-function closeMobileNav(){
+function closeMobileNav() {
     $(".men").html('<i class="fas fa-bars"></i>')
     $(".menu-mobile").fadeOut()
     $(".men").attr("id", "off")
