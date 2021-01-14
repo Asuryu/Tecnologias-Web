@@ -50,17 +50,17 @@ function drawChart1() {
 }
 function drawChart2() {
     var data = google.visualization.arrayToDataTable([
-        ["Países", "Nacionalidades", { role: "style" } ],
+        ["Países", "Nrº de Utentes", { role: "style" } ],
         ["Brasil", 132, "#F8B384"],
         ["Angola", 71, "#D98E73"],
         ["Espanha", 37, "#F0978C"],
-        ["Cabo Verde", 32, "color: #D9737D"],
-        ["Ucrânia", 24, "color: #F884CA"],
-        ["Roménia", 20, "color: #BD8AFA"],
-        ["Guiné-Bissau", 17, "color: #8B86D9"],
-        ["Itália", 17, "color: #93B6FA"],
-        ["Alemanha", 11, "color: #82BAD9"],
-        ["Índia", 10, "color: #e5e4e2"],
+        ["Cabo Verde", 32, "#D9737D"],
+        ["Ucrânia", 24, "#F884CA"],
+        ["Roménia", 20, "#BD8AFA"],
+        ["Guiné-Bissau", 17, "#8B86D9"],
+        ["Itália", 17, "#93B6FA"],
+        ["Alemanha", 11, "#82BAD9"],
+        ["Índia", 10, "#e5e4e2"],
     ]);
   
     var view = new google.visualization.DataView(data);
@@ -77,6 +77,9 @@ function drawChart2() {
         bar: {groupWidth: "95%"},
         hAxis: {
             textStyle: {color: "white"}
+        },
+        vAxis: {
+            textStyle: {color: "gray"}
         },
         titleTextStyle: { 
             color: "white",
@@ -117,6 +120,7 @@ function drawChart3() {
             textStyle: {color: "white"}
         },
         hAxis: {textStyle: {color: "white"}},
+        vAxis: {textStyle: {color: "gray"}},
         titleTextStyle: { 
             color: "white",
             fontSize: "18"
@@ -152,6 +156,7 @@ function drawChart4() {
         hAxis: {
             textStyle: {color: "white"}
         },
+        vAxis: {textStyle: {color: "gray"}},
         titleTextStyle: { 
             color: "white",
             fontSize: "18"
@@ -175,16 +180,16 @@ function drawChart5() {
     data.addColumn('number', 'Percentage');
     data.backgroundColor
     data.addRows([
-    ['Sem Médico', 0.10],
-    ['Emília Nina', 0.114],
-    ['Olga Soares', 0.10],
-    ['Teresa Tomé', 0.133],
-    ['Rosa Lima', 0.099],
-    ['Lurdes Silva', 0.11],
-    ['Joaquim Monteiro', 0.138],
-    ['Otília Santos', 0.102],
-    ['Cristina Fagulha', 0.102],
-    ['Luís Pinto', 0.102],
+    ['Sem Médico', 0.09],
+    ['Emília Nina', 0.104],
+    ['Olga Soares', 0.09],
+    ['Teresa Tomé', 0.123],
+    ['Rosa Lima', 0.089],
+    ['Lurdes Silva', 0.109],
+    ['Joaquim Monteiro', 0.128],
+    ['Otília Santos', 0.092],
+    ['Cristina Fagulha', 0.092],
+    ['Luís Pinto', 0.092],
 
     ]);
     var options = {
@@ -193,6 +198,7 @@ function drawChart5() {
             color: "white",
             fontSize: "18"
         },
+        vAxis: {textStyle: {color: "gray"}},
         legend: {
             position: "left",
             textStyle: {color: "white"}
@@ -242,6 +248,7 @@ function drawChart6() {
         hAxis: {
             textStyle: {color: "white"}
         },
+        vAxis: {textStyle: {color: "gray"}},
         legend: {
             position: "bottom",
             textStyle: {color: "white"}

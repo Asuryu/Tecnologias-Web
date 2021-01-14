@@ -21,17 +21,18 @@ $(document).ready(function () {
         }
     })
 
+    // Esconder gráficos
     $("#graph2, #graph3, #graph4, #graph5, #graph6").hide()
 
     $("#next").click(function () {
 
         if ($("#carousel").attr("slide") == "6") {
-            $("#i" + slideIndex).removeClass("current")
+            $("#i6").removeClass("current") 
             $("#graph6").hide()
-            slideIndex = 1
+            slideIndex = 1 
             $("#carousel").attr("slide", slideIndex)
             $("#graph1").show()
-            $("#i" + slideIndex).addClass("current")
+            $("#i1").addClass("current")
         } else {
             $("#i" + slideIndex).removeClass("current")
             $("#graph" + slideIndex).hide()
@@ -41,6 +42,7 @@ $(document).ready(function () {
             $("#i" + slideIndex).addClass("current")
         }
 
+        // Correção da má-renderização de um gráfico
         drawChart1();
         drawChart2();
         drawChart3();
@@ -52,12 +54,12 @@ $(document).ready(function () {
     $("#prev").click(function () {
 
         if ($("#carousel").attr("slide") == "1") {
-            $("#i" + slideIndex).removeClass("current")
+            $("#i1").removeClass("current")
             $("#graph1").hide()
             slideIndex = 6
             $("#carousel").attr("slide", slideIndex)
             $("#graph6").show()
-            $("#i" + slideIndex).addClass("current")
+            $("#i6").addClass("current")
         } else {
             $("#i" + slideIndex).removeClass("current")
             $("#graph" + slideIndex).hide()
@@ -67,6 +69,7 @@ $(document).ready(function () {
             $("#i" + slideIndex).addClass("current")
         }
 
+        // Correção da má-renderização de um gráfico
         drawChart1();
         drawChart2();
         drawChart3();
@@ -179,13 +182,14 @@ $(document).ready(function () {
 
     $("body").css({ "display": "block" })
 
-    $(".notification, .wrap, .lout, .wrap2, .container, .navbg").hide()
+    // Esconder elementos quando o site inicia
+    $(".notification, .lout, .container, .navbg").hide()
     $("#mais-apoio .items div").hide()
     $(".faq div").show()
     $("#success, #success p, #successR, #successR p").hide()
     $(".flair, .registerBox, .loginBox, .close, .menu-mobile, #sub1, #sub2, #back").hide()
-    $("#bg").fadeIn()
 
+    // Correção de um bug
     $(".flair").css({
         "transition": "0.3s",
         "width": "0px"
@@ -197,7 +201,8 @@ $(document).ready(function () {
         $(".main").fadeIn()
         $(".navbg").fadeOut()
     })
-
+    
+    // Mostra a página "Quem Somos?"
     $("#0, #5").click(function () {
         $("form").trigger("reset")
         $(".darkner").css({ "opacity": "1.0" })
@@ -206,6 +211,7 @@ $(document).ready(function () {
         $(".navbg").fadeIn()
         $(".main").fadeOut()
     })
+    // Mostra a página "O Que Fazemos?"
     $("#1, #6").click(function () {
         $("form").trigger("reset")
         $(".darkner").css({ "opacity": "1.0" })
@@ -214,6 +220,7 @@ $(document).ready(function () {
         $(".navbg").fadeIn()
         $(".main").fadeOut()
     })
+    // Mostra a página "Indicadores"
     $("#2, #7").click(function () {
         slideIndex = 1
         $("form").trigger("reset")
@@ -224,6 +231,7 @@ $(document).ready(function () {
         $(".main").fadeOut()
         drawChart1();
     })
+    // Mostra a página "Recursos"
     $("#3, #8").click(function () {
         $("form").trigger("reset")
         $(".darkner").css({ "opacity": "1.0" })
@@ -275,10 +283,10 @@ $(document).ready(function () {
             $(".men").attr("id", "off")
         }
     })
+
     $(".register-link a#register").click(function () {
         $(".flair, .loginBox, .registerBox").css({ "position": "fixed" })
         $(".loginBox").fadeOut();
-        $(".close i").addClass("flip")
         $(".flair").css({
             "transition": "0.7s",
             "width": "calc(100% + 1050px)"
@@ -298,6 +306,7 @@ $(document).ready(function () {
             $(".loginBox").fadeIn();
         }, 700)
     })
+
     $(".close").click(function () {
         $(".flair").fadeOut()
         $(".men").fadeIn()
@@ -368,7 +377,6 @@ function checkCredentials() {
             showNotification("#log_in", "As credenciais introduzidas estão incorretas")
         }
     }
-
 }
 
 function registerUser() {
@@ -413,10 +421,10 @@ function registerUser() {
 }
 
 function showNotification(selector, message) {
-    $(selector).fadeIn()
-    $(selector).html("<center>" + message + "</center>")
+    $("#log_in").fadeIn()
+    $("#log_in").html("<center>" + message + "</center>")
     setTimeout(function () {
-        $(selector).fadeOut()
+        $("#log_in").fadeOut()
     }, 2500)
 }
 
