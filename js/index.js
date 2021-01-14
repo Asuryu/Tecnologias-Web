@@ -416,15 +416,16 @@ function registerUser() {
         }, 2000)
         $(".close").fadeOut()
         $(".lout").fadeIn()
+        $(".men").fadeIn()
     }
 
 }
 
 function showNotification(selector, message) {
-    $("#log_in").fadeIn()
-    $("#log_in").html("<center>" + message + "</center>")
+    $(selector).fadeIn()
+    $(selector).html("<center>" + message + "</center>")
     setTimeout(function () {
-        $("#log_in").fadeOut()
+        $(selector).fadeOut()
     }, 2500)
 }
 
