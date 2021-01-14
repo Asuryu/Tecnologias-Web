@@ -180,8 +180,10 @@ $(document).ready(function () {
     $("body").css({ "display": "block" })
 
     $(".notification, .wrap, .lout, .wrap2, .container, .navbg").hide()
+    $("#mais-apoio .items div").hide()
+    $(".faq div").show()
     $("#success, #success p, #successR, #successR p").hide()
-    $(".flair, .registerBox, .loginBox, .close, .menu-mobile").hide()
+    $(".flair, .registerBox, .loginBox, .close, .menu-mobile, #sub1, #sub2, #back").hide()
     $("#bg").fadeIn()
 
     $(".flair").css({
@@ -231,9 +233,31 @@ $(document).ready(function () {
         $(".main").fadeOut()
     })
     $("#4, #9").click(function () {
-        $("form").trigger("reset")
+        $("#0, #1, #2, #3, #4").hide()
+        $("#sub1, #sub2, #back").fadeIn()
+    })
+    $("#back").click(function(){
+        $("#0, #1, #2, #3, #4").fadeIn()
+        $("#sub1, #sub2, #back").hide()
+    })
+    $("#sub1, #pc_sub1").click(function(){
+        $("#0, #1, #2, #3, #4").fadeIn()
+        $("#sub1, #sub2, #back").hide()
+        $(".faq").hide()
+        $(".emergencia, .apoio, .uteis, .unidades").show()
         $(".darkner").css({ "opacity": "1.0" })
-        $("#mais-apoio, #indicadores, #recursos, #o-que-fazemos, #quem-somos").fadeOut()
+        $("#recursos, #indicadores, #recursos, #o-que-fazemos, #quem-somos").fadeOut()
+        $("#mais-apoio").fadeIn()
+        $(".navbg").fadeIn()
+        $(".main").fadeOut()
+    })
+    $("#sub2, #pc_sub2").click(function(){
+        $("#0, #1, #2, #3, #4").fadeIn()
+        $("#sub1, #sub2, #back").hide()
+        $(".faq").show()
+        $(".emergencia, .apoio, .uteis, .unidades").hide()
+        $(".darkner").css({ "opacity": "1.0" })
+        $("#recursos, #indicadores, #recursos, #o-que-fazemos, #quem-somos").fadeOut()
         $("#mais-apoio").fadeIn()
         $(".navbg").fadeIn()
         $(".main").fadeOut()

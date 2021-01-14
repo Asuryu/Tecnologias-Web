@@ -328,6 +328,37 @@ html {
 	top: 30px;
 	width: 100vw;
 
+	.dropdown {
+		position: relative;
+		display: inline-block;
+	}
+
+	.dropdown-content {
+		display: none;
+		top: 30px;
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, 0%);
+		background-color: #21212157;
+		border-radius: 7px;
+		min-width: 160px;
+		z-index: 200;
+		text-align: center;
+		padding: 5px;
+
+		a {
+			padding: 0;
+		}
+
+		a:hover {
+			transition: $transition-time;
+			color: rgb(255, 108, 108);
+		}
+	}
+	.dropdown:hover .dropdown-content {
+		display: block;
+	}
+
 	a {
 		transition: $transition-time;
 		padding: 24px;
@@ -670,6 +701,7 @@ bruh2 {
 			overflow-y: hidden;
 			margin: 0;
 			width: 100vw;
+			left: -30px;
 
 			div {
 				transition: $transition-time;
