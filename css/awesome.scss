@@ -961,6 +961,31 @@ bruh2 {
 	width: 100%;
 }
 
+@media (max-width: 600px) {
+	.loginBox,
+	.registerBox {
+		left: 50%;
+	}
+	.logo {
+		z-index: 107;
+		left: 50%;
+		transform: translate(-50%, 0%);
+	}
+	.subtitle {
+		width: 300px;
+		height: 30px;
+		top: 80px;
+	}
+	.men {
+		transition: 0.3s;
+		visibility: visible;
+		position: fixed;
+		left: 25px;
+	}
+	.menu-mobile {
+		visibility: visible;
+	}
+}
 @media (max-width: 1100px) {
 	.logo {
 		z-index: 107;
