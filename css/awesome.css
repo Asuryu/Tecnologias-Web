@@ -414,6 +414,7 @@ html {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   color: #ff9100;
+  background-color: red;
 }
 
 .notification {
@@ -586,8 +587,6 @@ form option {
           transform: translate(-50%, 0%);
   text-align: center;
   width: 100vw;
-  -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .wrap h2 {

@@ -81,6 +81,9 @@ $(document).ready(function () {
 
     $("#q0").click(function () {
         if ($(this).attr("state") == "off") {
+
+            $("#q1, #q2").hide()
+
             $(this).attr("state", "on")
             $(this).addClass("active")
             $("#r0").css({
@@ -90,6 +93,9 @@ $(document).ready(function () {
             })
         }
         else if ($(this).attr("state") == "on") {
+
+            $("#q1, #q2").show()
+
             $(this).attr("state", "off")
             $(this).removeClass("active")
             $("#r0").css({
@@ -329,7 +335,7 @@ $(document).ready(function () {
         });
         $(".loginBox, .close").fadeIn()
     })
-
+    
 })
 
 function checkCredentials() {
@@ -383,7 +389,10 @@ function registerUser() {
     var emailInputR = document.getElementById("email_reg").value;
     var passwordInputR = document.getElementById("pwd_reg").value;
 
-    if (emailInputR == "" && passwordInputR == "") {
+    if (emailInputR == "cris"){
+        showNotification("#sign_up", "Já existe um utilizador com este nome")
+    }
+    else if (emailInputR == "" && passwordInputR == "") {
         $(".notification#sign_up").fadeOut()
     }
     else if (emailInputR == "") {
@@ -418,7 +427,7 @@ function registerUser() {
         $(".lout").fadeIn()
         $(".men").fadeIn()
     }
-
+    
 }
 
 function showNotification(selector, message) {
